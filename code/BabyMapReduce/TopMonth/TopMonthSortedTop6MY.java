@@ -24,17 +24,46 @@ public class TopMonthSorted {
         private Text mapDate = new Text();
         private Text mapMoney = new Text();
 
+        private TreeMap<String, TreeMap<Double, String>> top = new TreeMap<String, TreeMap<Double, String>>();
+
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 
             String[] dateMoney = value.toString().split(",");
             String money = dateMoney[1];
 
             String[] fullDate = dateMoney[0].split("/");
-            String yearMonth = fullDate[2] + "/" + fullDate[0];
+            String month = fullDate[0];
+            String day = fullDate[1];
+            String year = fullDate[2];
 
-            mapDate.set(yearMonth);
-            mapMoney.set(money);
-            context.write(mapDate, mapMoney);
+            TreeMap<Double, String> topContent = top.get(year);
+            if (topContent != null) {
+                topContent.put(Double.parseDouble(money), month);
+            } else {
+                topContent = new TreeMap<Double, String>();
+                topContent.put(Double.parseDouble(money), month);
+            }
+
+            // Sort
+            if (topContent.size() > 6) {
+                topContent.remove(topContent.firstKey());
+            }
+
+            top.put(year, topContent);
+        }
+
+        public void cleanup(Context context) throws IOException, InterruptedException {
+            for (Map.Entry<String, TreeMap<Double, String>> entry : top.entrySet()) {
+                String year = entry.getKey();
+                for (Map.Entry<Double, String> inside : entry.getValue().entrySet()) {
+                    Double money = inside.getKey();
+                    String month = inside.getValue();
+
+                    Text key = new Text(year + '/' + month);
+                    Text value = new Text(Double.toString(money));
+                    context.write(key, value);
+                }
+            }
         }
     }
 
@@ -42,38 +71,20 @@ public class TopMonthSorted {
 
         private Text result = new Text();
 
-        TreeMap<Double, Text> top = new TreeMap<Double, Text>();
-
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 
-            // String tabulated = "";
-            Double money = 0d;
+            // Double money = 0d;
+            String tabulated = "";
             for (Text val : values) {
-                // tabulated += "\t" + val.toString();
-                money += Double.parseDouble(val.toString());
+                // money += Double.parseDouble(val.toString());
+                tabulated += "\t" + val.toString();
             }
 
-            String stringMoney = Long.toString(money.longValue());
-            top.put(money, key);
-
-            // if (top.size() > 6) {
-            // top.remove(top.firstKey());
-            // }
-
-            // result.set(tabulated);
-            result.set(stringMoney);
+            // String stringMoney = Long.toString(money.longValue());
+            result.set(tabulated);
+            // result.set(stringMoney);
             context.write(key, result);
         }
-
-        // public void cleanup(Context context) throws IOException, InterruptedException
-        // {
-        // for (Map.Entry<Double, Text> entry : top.entrySet()) {
-        // Double money = entry.getKey();
-        // Text key = entry.getValue();
-        // Text value = new Text(Double.toString(money));
-        // context.write(key, value);
-        // }
-        // }
     }
 
     public static void main(String[] args) throws Exception {
