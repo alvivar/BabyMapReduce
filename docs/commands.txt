@@ -1,0 +1,41 @@
+
+>
+    http://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows
+
+    ^
+    After adding a shared folder in VirtualBox named BabyMapReduce, pointing to the physical folder
+    Restart the 'docker-machine  [stop|start|restart]'
+    SSH the machine with docker-machine ssh
+    Create a folder: 'mkdir BabyMapReduce' in /home/docker/
+    'PWD' command to verify
+    Mount the folder sudo mount -t vboxsf -o uid=1000,gid=50 BabyMapReduce /home/docker/BabyMapReduce
+<
+
+docker run --hostname=quickstart.cloudera --privileged=true -t -i -v /BabyMapReduce:/BabyMapReduce --publish-all=true -p 8888:8888 -p 80:80 -p 7180:7180 -p 50070:50070 cloudera/quickstart /usr/bin/docker-quickstart
+
+Restart hue, just in case it doesn't work
+service hue stop
+service hue start
+
+Docker network
+http://192.168.99.100:8888/
+
+Cloudera Manager
+http://192.168.99.100:7180/cmf/home
+
+Hive
+http://192.168.99.100:8888/
+
+Creating the input dir on Hadoop
+hadoop fs -mkdir /user/cloudera/wordcount /user/cloudera/wordcount/input
+
+Sending the data file
+hadoop fs -put file* /user/cloudera/wordcount/input
+
+JAVA Compilation
+mkdir -p build
+javac -cp /usr/lib/hadoop/*:/usr/lib/hadoop-mapreduce/* WordCount.java -d build -Xlint
+jar -cvf wordcount.jar -C build/ .
+
+Sending the MapReduce
+hadoop jar wordcount.jar org.myorg.WordCount /user/cloudera/wordcount/input /user/cloudera/wordcount/output
