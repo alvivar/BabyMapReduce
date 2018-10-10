@@ -1,0 +1,4 @@
+javac -cp /usr/lib/hadoop/*:/usr/lib/hadoop-mapreduce/* SalesTotal.java -d build -Xlint
+jar -cvf SalesTotal.jar -C build/ .
+hadoop fs -rm -r /user/cloudera/babymapreduce/output
+hadoop jar SalesTotal.jar SalesTotal /user/cloudera/babymapreduce/input /user/cloudera/babymapreduce/output

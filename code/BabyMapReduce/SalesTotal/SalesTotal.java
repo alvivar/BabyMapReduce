@@ -15,7 +15,6 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
-
 public class SalesTotal {
 
     public static class SalesMapper extends Mapper<Object, Text, Text, Text> {
@@ -30,7 +29,7 @@ public class SalesTotal {
             String date = dateMoney[0];
             String money = dateMoney[1];
 
-            SimpleDateFormat fromDate = new SimpleDateFormat("dd/MM/YYYY");
+            SimpleDateFormat fromDate = new SimpleDateFormat("MM/dd/YYYY");
             SimpleDateFormat toDate = new SimpleDateFormat("YYYY");
 
             try {
@@ -49,8 +48,7 @@ public class SalesTotal {
 
         private Text result = new Text();
 
-        public void reduce(Text key, Iterable<Text> values, Context context)
-                throws IOException, InterruptedException {
+        public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 
             // String tabulated = "";
             Double money = 0d;
