@@ -24,7 +24,6 @@ public class TopMonthSorted {
         private Text mapDate = new Text();
         private Text mapMoney = new Text();
 
-        // private TreeMap<Double, Text> topMoney = new TreeMap<Double, Text>();
         private TreeMap<String, TreeMap<Double, String>> top = new TreeMap<String, TreeMap<Double, String>>();
 
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
@@ -33,8 +32,8 @@ public class TopMonthSorted {
             String money = dateMoney[1];
 
             String[] fullDate = dateMoney[0].split("/");
-            String day = fullDate[0];
-            String month = fullDate[1];
+            String month = fullDate[0];
+            String day = fullDate[1];
             String year = fullDate[2];
 
             TreeMap<Double, String> topContent = top.get(year);
@@ -51,15 +50,6 @@ public class TopMonthSorted {
             }
 
             top.put(year, topContent);
-
-            // topMoney.put(Double.parseDouble(money), new Text(monthYear));
-            // if (topMoney.size() > 10) {
-            // topMoney.remove(topMoney.firstKey());
-            // }
-
-            // mapDate.set(monthYear);
-            // mapMoney.set(money);
-            // context.write(mapDate, mapMoney);
         }
 
         public void cleanup(Context context) throws IOException, InterruptedException {
@@ -69,7 +59,7 @@ public class TopMonthSorted {
                     Double money = inside.getKey();
                     String month = inside.getValue();
 
-                    Text key = new Text(month + '/' + year);
+                    Text key = new Text(year + '/' + month);
                     Text value = new Text(Double.toString(money));
                     context.write(key, value);
                 }
@@ -83,16 +73,16 @@ public class TopMonthSorted {
 
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 
-            Double money = 0d;
-            // String tabulated = "";
+            // Double money = 0d;
+            String tabulated = "";
             for (Text val : values) {
-                money += Double.parseDouble(val.toString());
-                // tabulated += "\t" + val.toString();
+                // money += Double.parseDouble(val.toString());
+                tabulated += "\t" + val.toString();
             }
 
-            String stringMoney = Long.toString(money.longValue());
-            // result.set(tabulated);
-            result.set(stringMoney);
+            // String stringMoney = Long.toString(money.longValue());
+            result.set(tabulated);
+            // result.set(stringMoney);
             context.write(key, result);
         }
     }
