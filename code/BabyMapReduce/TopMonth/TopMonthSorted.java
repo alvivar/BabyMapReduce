@@ -17,14 +17,15 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class TopMonth {
+public class TopMonthSorted {
 
     public static class TopMapper extends Mapper<Object, Text, Text, Text> {
 
         private Text mapDate = new Text();
         private Text mapMoney = new Text();
 
-        private TreeMap<Double, Text> topMoney = new TreeMap<Double, Text>();
+        // private TreeMap<Double, Text> topMoney = new TreeMap<Double, Text>();
+        private TreeMap<String, TreeMap<Double, String>> top = new TreeMap<String, TreeMap<Double, String>>();
 
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 
@@ -32,12 +33,29 @@ public class TopMonth {
             String money = dateMoney[1];
 
             String[] fullDate = dateMoney[0].split("/");
-            String monthYear = fullDate[1] + "/" + fullDate[2];
+            String day = fullDate[0];
+            String month = fullDate[1];
+            String year = fullDate[2];
 
-            topMoney.put(Double.parseDouble(money), new Text(monthYear));
-            if (topMoney.size() > 10) {
-                topMoney.remove(topMoney.firstKey());
+            TreeMap<Double, String> topContent = top.get(year);
+            if (topContent != null) {
+                topContent.put(Double.parseDouble(money), month);
+            } else {
+                topContent = new TreeMap<Double, String>();
+                topContent.put(Double.parseDouble(money), month);
             }
+
+            // Sort
+            if (topContent.size() > 6) {
+                topContent.remove(topContent.firstKey());
+            }
+
+            top.put(year, topContent);
+
+            // topMoney.put(Double.parseDouble(money), new Text(monthYear));
+            // if (topMoney.size() > 10) {
+            // topMoney.remove(topMoney.firstKey());
+            // }
 
             // mapDate.set(monthYear);
             // mapMoney.set(money);
@@ -45,8 +63,16 @@ public class TopMonth {
         }
 
         public void cleanup(Context context) throws IOException, InterruptedException {
-            for (Map.Entry<Double, Text> entry : topMoney.entrySet()) {
-                context.write(entry.getValue(), new Text(Double.toString(entry.getKey())));
+            for (Map.Entry<String, TreeMap<Double, String>> entry : top.entrySet()) {
+                String year = entry.getKey();
+                for (Map.Entry<Double, String> inside : entry.getValue().entrySet()) {
+                    Double money = inside.getKey();
+                    String month = inside.getValue();
+
+                    Text key = new Text(month + '/' + year);
+                    Text value = new Text(Double.toString(money));
+                    context.write(key, value);
+                }
             }
         }
     }
@@ -74,8 +100,8 @@ public class TopMonth {
     public static void main(String[] args) throws Exception {
 
         Configuration conf = new Configuration();
-        Job job = Job.getInstance(conf, "Top Month");
-        job.setJarByClass(TopMonth.class);
+        Job job = Job.getInstance(conf, "Top Month Sorted");
+        job.setJarByClass(TopMonthSorted.class);
         job.setMapperClass(TopMapper.class);
         job.setCombinerClass(TopReducer.class);
         job.setReducerClass(TopReducer.class);
