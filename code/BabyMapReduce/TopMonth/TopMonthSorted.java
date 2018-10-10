@@ -24,6 +24,7 @@ public class TopMonthSorted {
         private Text mapDate = new Text();
         private Text mapMoney = new Text();
 
+        @Override
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 
             String[] dateMoney = value.toString().split(",");
@@ -54,26 +55,29 @@ public class TopMonthSorted {
             }
 
             String stringMoney = Long.toString(money.longValue());
-            top.put(money, key);
 
-            // if (top.size() > 6) {
-            // top.remove(top.firstKey());
-            // }
-
+            // result.set(stringMoney);
             // result.set(tabulated);
-            result.set(stringMoney);
-            context.write(key, result);
+            // context.write(key, result);
+
+            top.put(money, new Text(key.toString()));
+
+            if (top.size() > 6) {
+                top.remove(top.firstKey());
+            }
         }
 
-        // public void cleanup(Context context) throws IOException, InterruptedException
-        // {
-        // for (Map.Entry<Double, Text> entry : top.entrySet()) {
-        // Double money = entry.getKey();
-        // Text key = entry.getValue();
-        // Text value = new Text(Double.toString(money));
-        // context.write(key, value);
-        // }
-        // }
+        public void cleanup(Context context) throws IOException, InterruptedException {
+
+            for (Map.Entry<Double, Text> inside : top.entrySet()) {
+
+                Text money = new Text(Long.toString(inside.getKey().longValue()));
+                Text key = inside.getValue();
+
+                context.write(key, money);
+            }
+
+        }
     }
 
     public static void main(String[] args) throws Exception {
