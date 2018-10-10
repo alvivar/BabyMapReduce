@@ -1,6 +1,8 @@
 
 Notes
 
+An example of a MapReduce using dates
+https://stackoverflow.com/questions/44399163/java-mapreduce-counting-by-date
 
 I didn't try this but it seems to configure Eclipse to work with hadoop
 http://blog.cloudera.com/blog/2013/08/how-to-use-eclipse-with-mapreduce-in-clouderas-quickstart-vm/
