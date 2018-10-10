@@ -25,20 +25,15 @@ public class TopMonth {
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 
             String[] dateMoney = value.toString().split(",");
-            String[] fullDate = dateMoney[0].split("/");
-
             String money = dateMoney[1];
-            String monthYear = fullDate[1] + "/" + fullDate[2];
+
+            String[] fullDate = dateMoney[0].split("/");
+            String monthYear = fullDate[0] + "/" + fullDate[2];
 
             mapDate.set(monthYear);
             mapMoney.set(money);
             context.write(mapDate, mapMoney);
         }
-
-        // public void cleanup(Context context) throws IOException, InterruptedException
-        // {
-
-        // }
     }
 
     public static class TopReducer extends Reducer<Text, Text, Text, Text> {
@@ -51,7 +46,7 @@ public class TopMonth {
             // String tabulated = "";
             for (Text val : values) {
                 money += Double.parseDouble(val.toString());
-                // tabulated += "\t" + val.toString();
+                // tabulated += val.toString() + "\t";
             }
 
             String stringMoney = Long.toString(money.longValue());
