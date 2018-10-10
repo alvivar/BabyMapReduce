@@ -15,7 +15,6 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
-
 public class TopMonth {
 
     public static class TopMapper extends Mapper<Object, Text, Text, Text> {
@@ -26,38 +25,37 @@ public class TopMonth {
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 
             String[] dateMoney = value.toString().split(",");
+            String[] fullDate = dateMoney[0].split("/");
 
-            String date = dateMoney[0];
             String money = dateMoney[1];
+            String monthYear = fullDate[1] + "/" + fullDate[2];
 
-            SimpleDateFormat fromDate = new SimpleDateFormat("dd/MM/YYYY");
-            SimpleDateFormat toDate = new SimpleDateFormat("MM/YYYY");
-
-            try {
-                date = toDate.format(fromDate.parse(dateMoney[0]));
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-            mapDate.set(date);
+            mapDate.set(monthYear);
             mapMoney.set(money);
             context.write(mapDate, mapMoney);
         }
+
+        // public void cleanup(Context context) throws IOException, InterruptedException
+        // {
+
+        // }
     }
 
     public static class TopReducer extends Reducer<Text, Text, Text, Text> {
 
         private Text result = new Text();
 
-        public void reduce(Text key, Iterable<Text> values, Context context)
-                throws IOException, InterruptedException {
+        public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 
             Double money = 0d;
+            // String tabulated = "";
             for (Text val : values) {
                 money += Double.parseDouble(val.toString());
+                // tabulated += "\t" + val.toString();
             }
 
             String stringMoney = Long.toString(money.longValue());
+            // result.set(tabulated);
             result.set(stringMoney);
             context.write(key, result);
         }
@@ -66,7 +64,7 @@ public class TopMonth {
     public static void main(String[] args) throws Exception {
 
         Configuration conf = new Configuration();
-        Job job = Job.getInstance(conf, "Sales Total");
+        Job job = Job.getInstance(conf, "Top Month");
         job.setJarByClass(TopMonth.class);
         job.setMapperClass(TopMapper.class);
         job.setCombinerClass(TopReducer.class);

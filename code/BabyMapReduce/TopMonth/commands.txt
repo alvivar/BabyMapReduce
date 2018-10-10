@@ -1,0 +1,4 @@
+javac -cp /usr/lib/hadoop/*:/usr/lib/hadoop-mapreduce/* TopMonth.java -d build -Xlint
+jar -cvf TopMonth.jar -C build/ .
+hadoop fs -rm -r /user/cloudera/babymapreduce/output
+hadoop jar TopMonth.jar TopMonth /user/cloudera/babymapreduce/input /user/cloudera/babymapreduce/output
