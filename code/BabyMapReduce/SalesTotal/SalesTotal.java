@@ -52,12 +52,15 @@ public class SalesTotal {
         public void reduce(Text key, Iterable<Text> values, Context context)
                 throws IOException, InterruptedException {
 
-            String sum = "";
+            // String sum = "";
+            Float money = 0f;
             for (Text val : values) {
-                sum += val.toString() + "\t";
+                // sum += val.toString() + "; ";
+                money += Float.parseFloat(val.toString());
             }
 
-            result.set(sum);
+            // result.set(sum);
+            result.set(Float.toString(money));
             context.write(key, result);
         }
     }
