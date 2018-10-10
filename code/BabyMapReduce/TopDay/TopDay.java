@@ -17,7 +17,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class TopDaySorted {
+public class TopDay {
 
     public static class TopMapper extends Mapper<Object, Text, Text, Text> {
 
@@ -43,8 +43,6 @@ public class TopDaySorted {
 
         private Text result = new Text();
 
-        private TreeMap<Double, String> top = new TreeMap<Double, String>();
-
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 
             // String tabulated = "";
@@ -54,37 +52,18 @@ public class TopDaySorted {
                 money += Double.parseDouble(val.toString());
             }
 
-            // Sort
-            top.put(money, key.toString());
-
-            if (top.size() > 8) {
-                top.remove(top.firstKey());
-            }
-
-            // String stringMoney = Long.toString(money.longValue());
-            // result.set(stringMoney);
+            String stringMoney = Long.toString(money.longValue());
+            result.set(stringMoney);
             // result.set(tabulated);
-            // context.write(key, result);
-        }
-
-        public void cleanup(Context context) throws IOException, InterruptedException {
-            for (Map.Entry<Double, String> inside : top.entrySet()) {
-                String day = inside.getValue();
-                Double money = inside.getKey();
-                String stringMoney = Long.toString(money.longValue());
-
-                Text key = new Text(day);
-                Text value = new Text(stringMoney);
-                context.write(key, value);
-            }
+            context.write(key, result);
         }
     }
 
     public static void main(String[] args) throws Exception {
 
         Configuration conf = new Configuration();
-        Job job = Job.getInstance(conf, "Top Day Sorted");
-        job.setJarByClass(TopDaySorted.class);
+        Job job = Job.getInstance(conf, "Top Day");
+        job.setJarByClass(TopDay.class);
         job.setMapperClass(TopMapper.class);
         job.setCombinerClass(TopReducer.class);
         job.setReducerClass(TopReducer.class);
