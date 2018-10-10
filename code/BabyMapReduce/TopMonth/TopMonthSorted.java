@@ -43,7 +43,7 @@ public class TopMonthSorted {
 
         private Text result = new Text();
 
-        TreeMap<Double, Text> top = new TreeMap<Double, Text>();
+        private TreeMap<String, TreeMap<Double, String>> top = new TreeMap<String, TreeMap<Double, String>>();
 
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 
@@ -55,28 +55,41 @@ public class TopMonthSorted {
             }
 
             String stringMoney = Long.toString(money.longValue());
+            String year = key.toString().split("/")[0];
+
+            TreeMap<Double, String> topContent = top.get(year);
+            if (topContent != null) {
+                topContent.put(money, key.toString());
+            } else {
+                topContent = new TreeMap<Double, String>();
+                topContent.put(money, key.toString());
+            }
+
+            // Sort
+            if (topContent.size() > 6) {
+                topContent.remove(topContent.firstKey());
+            }
+
+            top.put(year, topContent);
 
             // result.set(stringMoney);
             // result.set(tabulated);
             // context.write(key, result);
-
-            top.put(money, new Text(key.toString()));
-
-            if (top.size() > 6) {
-                top.remove(top.firstKey());
-            }
         }
 
         public void cleanup(Context context) throws IOException, InterruptedException {
+            for (Map.Entry<String, TreeMap<Double, String>> entry : top.entrySet()) {
+                String year = entry.getKey();
+                for (Map.Entry<Double, String> inside : entry.getValue().entrySet()) {
+                    String month = inside.getValue();
+                    Double money = inside.getKey();
+                    String stringMoney = Long.toString(money.longValue());
 
-            for (Map.Entry<Double, Text> inside : top.entrySet()) {
-
-                Text money = new Text(Long.toString(inside.getKey().longValue()));
-                Text key = inside.getValue();
-
-                context.write(key, money);
+                    Text key = new Text(month);
+                    Text value = new Text(stringMoney);
+                    context.write(key, value);
+                }
             }
-
         }
     }
 
