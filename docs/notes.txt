@@ -1,0 +1,13 @@
+Docker
+
+Everything needed to run the MapReduce
+https://www.cloudera.com/documentation/other/tutorial/CDH5/topics/ht_usage.html
+
+Better commands + All needed ports here
+http://msoliman.me/2017/04/24/hadoop-inside-docker-the-easiest-way-in-5-minutes/
+
+I learned the main command from here, but it needed more details
+https://medium.com/@SnazzyHam/how-to-get-up-and-running-with-clouderas-quickstart-docker-container-732c04ed0280
+
+I learned here to connect the folders with docker
+http://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows
