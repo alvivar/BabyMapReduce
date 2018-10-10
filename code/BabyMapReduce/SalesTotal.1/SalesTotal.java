@@ -52,16 +52,15 @@ public class SalesTotal {
         public void reduce(Text key, Iterable<Text> values, Context context)
                 throws IOException, InterruptedException {
 
-            // String tabulated = "";
-            Double money = 0d;
+            // String sum = "";
+            Float money = 0f;
             for (Text val : values) {
-                // tabulated += val.toString() + "\t";
-                money += Double.parseDouble(val.toString());
+                // sum += val.toString() + "; ";
+                money += Float.parseFloat(val.toString());
             }
 
-            // result.set(tabulated);
-            String stringMoney = Long.toString(money.longValue());
-            result.set(stringMoney);
+            // result.set(sum);
+            result.set(Float.toString(money));
             context.write(key, result);
         }
     }
