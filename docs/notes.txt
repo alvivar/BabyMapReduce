@@ -1,4 +1,9 @@
-Docker
+
+Notes
+
+
+I didn't try this but it seems to configure Eclipse to work with hadoop
+http://blog.cloudera.com/blog/2013/08/how-to-use-eclipse-with-mapreduce-in-clouderas-quickstart-vm/
 
 Everything needed to run the MapReduce
 https://www.cloudera.com/documentation/other/tutorial/CDH5/topics/ht_usage.html
