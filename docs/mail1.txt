@@ -1,0 +1,53 @@
+
+Mae, tengo el código en mi repositorio en github, adjunto los enlaces relevantes.
+
+Logré que corriera en la imagen de Cloudera, entonces incluyo también varias
+versiones de los output.
+
+El ejercicio 1 se resuelve con
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/SalesTotal/SalesTotal.java
+
+Esta es la versión tabulada de los outputs
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/SalesTotal/part-r-00000-list
+
+Esta es una versión con los totales
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/SalesTotal/part-r-00000-double-total
+
+
+El ejercicio 2 se resuelve con
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/TopMonth/TopMonthSorted.java
+
+El ordenamiento lo hice un TreeMap que se carga en el reduce y llena el context
+en el cleanup.
+
+Este output contiene el top 6
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/TopMonth/part-r-00000-top6
+
+Este otro son todos los totales relacionados
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/TopMonth/part-r-00000-montly-total
+
+Este otro son los listados tabulados que sumarían los totales
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/TopMonth/part-r-00000-montly-list
+
+
+El ejercicio 3 se revuelve con
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/TopDay/TopDaySorted.java
+
+Igual que en los anteriores incluyo los outputs:
+
+Top 4
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/TopDay/part-r-00000-top4
+
+Top 8
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/TopDay/part-r-00000-top8
+
+Totales diarios
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/TopDay/part-r-00000-daily-total
+
+Totales tabulados
+https://github.com/alvivar/BabyMapReduce/blob/master/code/BabyMapReduce/TopDay/part-r-00000-daily-list
+
+Por aquello, los ejercicios 2 y 3 tienen también una versión que no es sorted (lo
+dice en el nombre de archivo) en el repo, son las que usé para generar los
+outputs tabulados y con totales, pero las soluciones están en la versión sorted
+que indican estos ^ enlaces.

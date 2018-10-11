@@ -1,6 +1,10 @@
 
 Notes
 
+
+I found a hint about not using Text directly because of Hadoop optimizations
+http://andreaiacono.blogspot.com/2014/03/mapreduce-for-top-n-items.html
+
 An example of a MapReduce using dates
 https://stackoverflow.com/questions/44399163/java-mapreduce-counting-by-date
 
