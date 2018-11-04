@@ -2,8 +2,12 @@
     Commands
 
 
-docker run --name=clouderaquickstart --hostname=quickstart.cloudera --privileged=true -t -i -v /DEV:/DEV --publish-all=true -p 8888:8888 -p 80:80 -p 7180:7180 -p 50070:50070 -p 9083:9083 -p 10000:10000 cloudera/quickstart /usr/bin/docker-quickstart
 
+docker run --name=clouderaquickstart --hostname=quickstart.cloudera --privileged=true -t -i -v /DEV:/DEV --publish-all=true -p 8888:8888 -p 80:80 -p 7180:7180 -p 50070:50070 -p 9083:9083 -p 10000:10000 cloudera/quickstart /usr/bin/docker-quickstart
 ^
-9083 Port exposes Hive (not needed right now)
 10000 Port exposes the Hive server 2, to be used on HIVE ODBC connections and stuff
+9083 Port exposes Hive (not needed right now)
+
+
+Hive
+http://192.168.99.100:8888/

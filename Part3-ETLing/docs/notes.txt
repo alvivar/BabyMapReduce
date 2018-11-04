@@ -1,6 +1,14 @@
 
     Notes
 
+    The detail connecting to Docker MemSQL was to use the correct driver
+    version: MySQL ODBC 5.3 ANSI Driver, not the latest.
+    https://docs.memsql.com/integrations/v6.5/connecting-to-powerbi/
+
+
+    Blocker: Installing the Hive ODBC 64 bits version was an error, only
+    connections created with 32 bits show on Visual Studio. Classic.
+
 
     I learned here about the port 10000, exposing it Hive ODBC for connections
     https://ambari.apache.org/1.2.3/installing-hadoop-using-ambari/content/reference_chap2_3.html
