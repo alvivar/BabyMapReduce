@@ -1,0 +1,6 @@
+
+Assuming /BabyMapReduce and /LoadAndSummarize
+docker run --hostname=quickstart.cloudera --privileged=true -t -i -v /BabyMapReduce:/BabyMapReduce -v /LoadAndSummarize:/LoadAndSummarize --publish-all=true -p 8888:8888 -p 80:80 -p 7180:7180 -p 50070:50070 cloudera/quickstart /usr/bin/docker-quickstart
+
+Hive
+http://192.168.99.100:8888/

@@ -1,0 +1,14 @@
+
+Notes
+
+
+https://github.com/ogrodnek/csv-serde
+https://stackoverflow.com/questions/48763661/hive-table-from-csv-the-line-termination-in-quotes
+New lines between quotes could be handled using a custom input formatter .jar on
+Hive, csv-serde uses opencsv stuff
+
+The data selected from http://insideairbnb.com/get-the-data.html (detailed
+listings.csv, calendar.csv) was:
+    Barcelona, Catalonia, Spain
+    Cape Town, Western Cape, South Africa
+    Montreal, Quebec, Canada

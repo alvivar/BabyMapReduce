@@ -1,0 +1,7 @@
+
+The data selected from http://insideairbnb.com/get-the-data.html (detailed
+listings.csv, calendar.csv) was:
+
+    Barcelona, Catalonia, Spain
+    Cape Town, Western Cape, South Africa
+    Montreal, Quebec, Canada
