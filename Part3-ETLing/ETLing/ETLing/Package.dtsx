@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/1/2018 9:09:51 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VALAX"
+  DTS:CreatorName="VALAX\matnesis"
+  DTS:DTSID="{C08A3390-A53D-497E-A492-618E048418DD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionGUID="{64F834AC-F2BB-4E47-BEF3-DC1253C3E3DA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+</DTS:Executable>
