@@ -110,7 +110,7 @@ WITH SERDEPROPERTIES (
 )
 STORED AS TEXTFILE;
 
-LOAD DATA LOCAL INPATH '/LoadAndSummarize/data/clean_Montreal_Quebec_Canada_listings.csv' OVERWRITE INTO TABLE bases2.montreal_listings;
+LOAD DATA LOCAL INPATH '/DEV/BigData-BI/Part2-LoadAndSummarize/data/clean_Montreal_Quebec_Canada_listings.csv' OVERWRITE INTO TABLE bases2.montreal_listings;
 
 
 DROP TABLE IF EXISTS bases2.montreal_calendar;
@@ -130,4 +130,4 @@ WITH SERDEPROPERTIES (
 )
 STORED AS TEXTFILE;
 
-LOAD DATA LOCAL INPATH '/LoadAndSummarize/data/clean_Montreal_Quebec_Canada_calendar.csv' OVERWRITE INTO TABLE bases2.montreal_calendar;
+LOAD DATA LOCAL INPATH '/DEV/BigData-BI/Part2-LoadAndSummarize/data/clean_Montreal_Quebec_Canada_calendar.csv' OVERWRITE INTO TABLE bases2.montreal_calendar;

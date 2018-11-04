@@ -110,7 +110,7 @@ WITH SERDEPROPERTIES (
 )
 STORED AS TEXTFILE;
 
-LOAD DATA LOCAL INPATH '/LoadAndSummarize/data/clean_Cape_Town_Western_Cape_South_Africa_listings.csv' OVERWRITE INTO TABLE bases2.cape_town_listings;
+LOAD DATA LOCAL INPATH '/DEV/BigData-BI/Part2-LoadAndSummarize/data/clean_Cape_Town_Western_Cape_South_Africa_listings.csv' OVERWRITE INTO TABLE bases2.cape_town_listings;
 
 
 DROP TABLE IF EXISTS bases2.cape_town_calendar;
@@ -130,4 +130,4 @@ WITH SERDEPROPERTIES (
 )
 STORED AS TEXTFILE;
 
-LOAD DATA LOCAL INPATH '/LoadAndSummarize/data/clean_Cape_Town_Western_Cape_South_Africa_calendar.csv' OVERWRITE INTO TABLE bases2.cape_town_calendar;
+LOAD DATA LOCAL INPATH '/DEV/BigData-BI/Part2-LoadAndSummarize/data/clean_Cape_Town_Western_Cape_South_Africa_calendar.csv' OVERWRITE INTO TABLE bases2.cape_town_calendar;
