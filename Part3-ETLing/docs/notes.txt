@@ -1,0 +1,14 @@
+
+    Notes
+
+
+    I learned here about the port 10000, exposing it Hive ODBC for connections
+    https://ambari.apache.org/1.2.3/installing-hadoop-using-ambari/content/reference_chap2_3.html
+    https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.5/bk_reference/content/hive-ports.html
+
+    About how to configure the Hive ODBC port
+    https://www.youtube.com/watch?v=plOZXJy-0XU
+
+
+    MemSQL
+    https://github.com/memsql/memsql-docker-quickstart
