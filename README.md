@@ -1,2 +1,2 @@
-# BabyMapReduce
-Bases II, Project II - BabyMapReduce 
+# BigData-BI
+Experiments created for Databases II Course
