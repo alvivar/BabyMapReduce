@@ -3,20 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ETLing", "ETLing\ETLing.dtproj", "{AA760922-5BBB-4A9B-BD67-ECEDE32BC665}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ETLing", "ETLing\ETLing.dtproj", "{85C378C7-FB13-48DE-8568-88B8A28B1A50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA760922-5BBB-4A9B-BD67-ECEDE32BC665}.Development|Default.ActiveCfg = Development
-		{AA760922-5BBB-4A9B-BD67-ECEDE32BC665}.Development|Default.Build.0 = Development
+		{85C378C7-FB13-48DE-8568-88B8A28B1A50}.Development|Default.ActiveCfg = Development
+		{85C378C7-FB13-48DE-8568-88B8A28B1A50}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3810080C-A64D-487A-BB08-C2ED84005322}
+		SolutionGuid = {AA7BA2A1-6CFC-4B06-B557-5046C300BB3D}
 	EndGlobalSection
 EndGlobal
