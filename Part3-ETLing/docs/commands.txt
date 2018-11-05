@@ -1,6 +1,30 @@
 
-    Commands
+Commands
 
+
+This is always useful: I learned here to connect the folders with docker
+http://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows
+
+
+MemSQL
+
+    # Pull the image
+    docker pull memsql/quickstart
+
+    # Verify your machine satisfies our minimum requirements
+    docker run --rm memsql/quickstart check-system
+
+    # Spin up a MemSQL cluster on your machine
+    docker run -d -p 3306:3306 -p 9000:9000 --name=memsql memsql/quickstart
+
+    # Run a quick benchmark against MemSQL
+    docker run --rm -it --link=memsql:memsql memsql/quickstart simple-benchmark
+
+    # Open a MemSQL command line shell
+    docker run --rm -it --link=memsql:memsql memsql/quickstart memsql-shell
+
+    # Stop and remove the container
+    docker rm -fv memsql
 
 
 docker run --name=clouderaquickstart --hostname=quickstart.cloudera --privileged=true -t -i -v /DEV:/DEV --publish-all=true -p 8888:8888 -p 80:80 -p 7180:7180 -p 50070:50070 -p 9083:9083 -p 10000:10000 cloudera/quickstart /usr/bin/docker-quickstart
