@@ -2,6 +2,14 @@
     Notes
 
 
+    Using ADO Net Sources/Destination instead of ODBC is an alternative that
+    brings better reading.
+
+    There was an error related to prepared statements on the server, fixed by
+    setting prepare statements on the client on the ODBC manager.
+    https://docs.memsql.com/concepts/v6.5/prepared-statements/
+
+
     Weather data is obtained from here, not exactly about the cities we are
     playing with, but the data requirements are there.
     https://www.meteoblue.com/en/weather/archive/export/basel_switzerland_2661604?daterange=2016-01-01+to+2018-11-05&params=&params%5B%5D=11%3B2+m+above+gnd&params%5B%5D=52%3B2+m+above+gnd&params%5B%5D=2%3BMSL&params%5B%5D=661%3Bsfc&params%5B%5D=79%3Bsfc&params%5B%5D=71%3Bsfc&params%5B%5D=75%3Bhigh+cld+lay%3B74%3Bmid+cld+lay%3B73%3Blow+cld+lay&params%5B%5D=191%3Bsfc&params%5B%5D=204%3Bsfc&params%5B%5D=32%3B10+m+above+gnd%3B31%3B10+m+above+gnd&params%5B%5D=32%3B80+m+above+gnd%3B31%3B80+m+above+gnd&params%5B%5D=32%3B900+mb%3B31%3B900+mb&params%5B%5D=180%3Bsfc&utc_offset=0&aggregation=daily&temperatureunit=CELSIUS&windspeedunit=KILOMETER_PER_HOUR

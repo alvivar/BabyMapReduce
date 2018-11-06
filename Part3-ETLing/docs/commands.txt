@@ -2,8 +2,12 @@
 Commands
 
 
-This is always useful: I learned here to connect the folders with docker
-http://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows
+To mount the physical directory:
+docker-machine ssh
+mkdir -p /DEV
+sudo mount -t vboxsf -o uid=1000,gid=50 DEV /DEV
+^
+DEV should be a folder in the virtual machine bind to the real folder in /D/DEV
 
 
 MemSQL
@@ -32,6 +36,5 @@ docker run --name=clouderaquickstart --hostname=quickstart.cloudera --privileged
 10000 Port exposes the Hive server 2, to be used on HIVE ODBC connections and stuff
 9083 Port exposes Hive (not needed right now)
 
-
-Hive
+Hue ^
 http://192.168.99.100:8888/
