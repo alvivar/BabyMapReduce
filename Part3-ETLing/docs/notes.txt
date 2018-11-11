@@ -8,7 +8,7 @@
     https://blogs.msdn.microsoft.com/mattm/2009/01/07/writing-to-a-mysql-database-from-ssis/
 
     Then, it was necesary to change ValidateExternalMetadata to false, to avoid
-    a validation check probably because of the incompatibility.
+    a problem about metadata sincronization.
     https://stackoverflow.com/questions/24313478/ssis-error-external-column-for-source-out-of-sync-with-data-source-columns-how
 
 
