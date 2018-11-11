@@ -2,6 +2,16 @@
     Notes
 
 
+    Blocker: The imcompatibility between queries in the driver was solved with a
+    persistent connections and some flags kind of parameters.
+    https://stackoverflow.com/questions/1580254/ssis-and-mysql-table-name-delimiter-issue
+    https://blogs.msdn.microsoft.com/mattm/2009/01/07/writing-to-a-mysql-database-from-ssis/
+
+    Then, it was necesary to change ValidateExternalMetadata to false, to avoid
+    a validation check probably because of the incompatibility.
+    https://stackoverflow.com/questions/24313478/ssis-error-external-column-for-source-out-of-sync-with-data-source-columns-how
+
+
     Using ADO Net Sources/Destination instead of ODBC is an alternative that
     brings better reading.
 

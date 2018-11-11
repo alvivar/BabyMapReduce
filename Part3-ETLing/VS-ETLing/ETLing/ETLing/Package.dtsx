@@ -11,15 +11,15 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{A5A21CBC-7078-4D47-86C6-A33007611814}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{4F7A8608-F007-4B3F-BE5D-7A4390643E79}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Cloudera Hive]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{998A93A8-4A3D-4956-8FBB-8E1AA7E8B6D4}"
+      DTS:DTSID="{B3DF3F5D-25CD-4FDC-A258-5A13A6928FCC}"
       DTS:ObjectName="Cloudera Hive">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -29,10 +29,11 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Docker MemSQL]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{5F988C0C-4BDD-4B33-B031-EB5FEAB36972}"
+      DTS:DTSID="{6DA7FA74-2ECA-4035-95BA-1F03672678F8}"
       DTS:ObjectName="Docker MemSQL">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:Retain="True"
           DTS:ConnectionString="Dsn=Docker MemSQL;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -59,6 +60,7 @@
               description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
               name="ADO NET Destination"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="2">
               <properties>
                 <property
@@ -108,59 +110,59 @@
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[idHouseConfiguration]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_listings.property_type]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.property_type]"
                       cachedDataType="nText"
-                      cachedName="barcelona_listings.property_type"
+                      cachedName="conversion_barcelona_listings.property_type"
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PropertyType]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_listings.property_type]" />
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.property_type]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_listings.room_type]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.room_type]"
                       cachedDataType="nText"
-                      cachedName="barcelona_listings.room_type"
+                      cachedName="conversion_barcelona_listings.room_type"
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RoomType]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_listings.room_type]" />
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.room_type]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_listings.accommodates]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.accommodates]"
                       cachedDataType="nText"
-                      cachedName="barcelona_listings.accommodates"
+                      cachedName="conversion_barcelona_listings.accommodates"
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AccommodatesCount]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_listings.accommodates]" />
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.accommodates]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_listings.bathrooms]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.bathrooms]"
                       cachedDataType="nText"
-                      cachedName="barcelona_listings.bathrooms"
+                      cachedName="conversion_barcelona_listings.bathrooms"
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BathromsCount]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_listings.bathrooms]" />
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.bathrooms]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_listings.bedrooms]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.bedrooms]"
                       cachedDataType="nText"
-                      cachedName="barcelona_listings.bedrooms"
+                      cachedName="conversion_barcelona_listings.bedrooms"
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BedroomsCount]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_listings.bedrooms]" />
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.bedrooms]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_listings.beds]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.beds]"
                       cachedDataType="nText"
-                      cachedName="barcelona_listings.beds"
+                      cachedName="conversion_barcelona_listings.beds"
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BedsCount]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_listings.beds]" />
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.beds]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_listings.bed_type]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.bed_type]"
                       cachedDataType="nText"
-                      cachedName="barcelona_listings.bed_type"
+                      cachedName="conversion_barcelona_listings.bed_type"
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BedType]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_listings.bed_type]" />
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.bed_type]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_listings.amenities]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.amenities]"
                       cachedDataType="nText"
-                      cachedName="barcelona_listings.amenities"
+                      cachedName="conversion_barcelona_listings.amenities"
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Amenities]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_listings.amenities]" />
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.amenities]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_listings.square_feet]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.square_feet]"
                       cachedDataType="nText"
-                      cachedName="barcelona_listings.square_feet"
+                      cachedName="conversion_barcelona_listings.square_feet"
                       externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SquareFeet]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_listings.square_feet]" />
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.square_feet]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2364,7 +2366,33 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\MemSQL Compatibility Fix"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A49B6A04-38AD-4807-8596-01AE3721733A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MemSQL Compatibility Fix"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6DA7FA74-2ECA-4035-95BA-1F03672678F8}"
+          SQLTask:SqlStatementSource="set sql_mode='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION,ANSI_QUOTES' " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7FBF95C5-4995-4EFB-90C8-8C4DCD23E13F}"
+      DTS:From="Package\MemSQL Compatibility Fix"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -2376,11 +2404,49 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="74.0714297391931,129.688237035811" />
+          TopLeft="126.071430624748,160.276472758917" />
+        <NodeLayout
+          Size="200.8,41.6"
+          Id="Package\MemSQL Compatibility Fix"
+          TopLeft="64.0000010899135,29.3647062941819" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="164.400001089913,70.9647062941819">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.8714295348344,89.311766464735"
+              Start="0,0"
+              End="36.8714295348344,81.811766464735">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.6558832323675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.6558832323675"
+                    Point2="0,44.6558832323675"
+                    Point3="4,44.6558832323675" />
+                  <mssgle:LineSegment
+                    End="32.8714295348344,44.6558832323675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.8714295348344,44.6558832323675"
+                    Point2="36.8714295348344,44.6558832323675"
+                    Point3="36.8714295348344,48.6558832323675" />
+                  <mssgle:LineSegment
+                    End="36.8714295348344,81.811766464735" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2402,31 +2468,31 @@
           Id="Package\Data Flow Task\ADO NET Destination"
           TopLeft="118.285716300108,261.223533075326" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="259.314288808862,193.317649186606">
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
+          TopLeft="210.228573666787,70.3529415797198">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-51.8285725087538,67.9058838887198"
+              EndConnector="49.085715142075,81.3647076068862"
               Start="0,0"
-              End="-51.8285725087538,60.4058838887198">
+              End="49.085715142075,73.8647076068862">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.9529419443599" />
+                    End="0,36.6823538034431" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.9529419443599"
-                    Point2="0,33.9529419443599"
-                    Point3="-4,33.9529419443599" />
+                    Point1="0,36.6823538034431"
+                    Point2="0,40.6823538034431"
+                    Point3="4,40.6823538034431" />
                   <mssgle:LineSegment
-                    End="-47.8285725087538,33.9529419443599" />
+                    End="45.085715142075,40.6823538034431" />
                   <mssgle:CubicBezierSegment
-                    Point1="-47.8285725087538,33.9529419443599"
-                    Point2="-51.8285725087538,33.9529419443599"
-                    Point3="-51.8285725087538,37.9529419443599" />
+                    Point1="45.085715142075,40.6823538034431"
+                    Point2="49.085715142075,40.6823538034431"
+                    Point3="49.085715142075,44.6823538034431" />
                   <mssgle:LineSegment
-                    End="-51.8285725087538,60.4058838887198" />
+                    End="49.085715142075,73.8647076068862" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2436,31 +2502,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
-          TopLeft="210.228573666787,70.3529415797198">
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="259.314288808862,193.317649186606">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.0857151420751,81.3647076068865"
+              EndConnector="-51.828572508754,67.90588388872"
               Start="0,0"
-              End="49.0857151420751,73.8647076068865">
+              End="-51.828572508754,60.40588388872">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.6823538034432" />
+                    End="0,29.95294194436" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.6823538034432"
-                    Point2="0,40.6823538034432"
-                    Point3="4,40.6823538034432" />
+                    Point1="0,29.95294194436"
+                    Point2="0,33.95294194436"
+                    Point3="-4,33.95294194436" />
                   <mssgle:LineSegment
-                    End="45.0857151420751,40.6823538034432" />
+                    End="-47.828572508754,33.95294194436" />
                   <mssgle:CubicBezierSegment
-                    Point1="45.0857151420751,40.6823538034432"
-                    Point2="49.0857151420751,40.6823538034432"
-                    Point3="49.0857151420751,44.6823538034432" />
+                    Point1="-47.828572508754,33.95294194436"
+                    Point2="-51.828572508754,33.95294194436"
+                    Point3="-51.828572508754,37.95294194436" />
                   <mssgle:LineSegment
-                    End="49.0857151420751,73.8647076068865" />
+                    End="-51.828572508754,60.40588388872" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
