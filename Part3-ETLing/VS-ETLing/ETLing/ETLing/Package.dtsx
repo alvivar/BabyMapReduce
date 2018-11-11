@@ -11,15 +11,15 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{542E7757-5F4C-435D-9827-05A866664349}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{A5A21CBC-7078-4D47-86C6-A33007611814}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Cloudera Hive]"
-      DTS:CreationName="ODBC"
-      DTS:DTSID="{F474429C-E7AB-4A08-A371-124F98FCF4DC}"
+      DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{998A93A8-4A3D-4956-8FBB-8E1AA7E8B6D4}"
       DTS:ObjectName="Cloudera Hive">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -27,30 +27,10 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Cloudera Hive 1]"
-      DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{998A93A8-4A3D-4956-8FBB-8E1AA7E8B6D4}"
-      DTS:ObjectName="Cloudera Hive 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Dsn=Cloudera Hive;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Docker MemSQL]"
-      DTS:CreationName="ODBC"
-      DTS:DTSID="{0A2D7BFB-7D57-4BDB-B442-B2A23FB44055}"
-      DTS:ObjectName="Docker MemSQL">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Dsn=Docker MemSQL;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Docker MemSQL 1]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
       DTS:DTSID="{5F988C0C-4BDD-4B33-B031-EB5FEAB36972}"
-      DTS:ObjectName="Docker MemSQL 1">
+      DTS:ObjectName="Docker MemSQL">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Dsn=Docker MemSQL;" />
@@ -109,8 +89,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\ADO NET Destination.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Docker MemSQL 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Docker MemSQL 1]"
+                  connectionManagerID="Package.ConnectionManagers[Docker MemSQL]"
+                  connectionManagerRefId="Package.ConnectionManagers[Docker MemSQL]"
                   description="Managed connection manager"
                   name="IDbConnection" />
               </connections>
@@ -303,8 +283,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\ADO NET Source.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Cloudera Hive 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Cloudera Hive 1]"
+                  connectionManagerID="Package.ConnectionManagers[Cloudera Hive]"
+                  connectionManagerRefId="Package.ConnectionManagers[Cloudera Hive]"
                   description="Managed connection manager"
                   name="IDbConnection" />
               </connections>
@@ -2400,7 +2380,7 @@
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="5.5,5.5" />
+          TopLeft="74.0714297391931,129.688237035811" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2409,6 +2389,10 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Data Flow Task\ADO NET Source"
+          TopLeft="131.428573666787,28.7529415797198" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\Data Flow Task\Data Conversion"
@@ -2451,10 +2435,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\Data Flow Task\ADO NET Source"
-          TopLeft="131.428573666787,28.7529415797198" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
           TopLeft="210.228573666787,70.3529415797198">
@@ -2493,7 +2473,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\ADO NET Destination">
+    design-time-name="Package\Data Flow Task\ADO NET Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2501,7 +2481,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\ADO NET Source">
+    design-time-name="Package\Data Flow Task\ADO NET Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
