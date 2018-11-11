@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS `bases2`;
+
 DROP TABLE IF EXISTS `bases2`.`HouseConfiguration`;
 
 CREATE TABLE IF NOT EXISTS `bases2`.`HouseConfiguration` (
