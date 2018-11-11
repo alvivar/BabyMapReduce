@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{4F7A8608-F007-4B3F-BE5D-7A4390643E79}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{6BA9CB47-A7E1-482B-90AA-BA14C242DACD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -35,6 +35,432 @@
         <DTS:ConnectionManager
           DTS:Retain="True"
           DTS:ConnectionString="Dsn=Docker MemSQL;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Weather CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Weather CSV"
+      DTS:DTSID="{C1FAAFB1-29C0-41F1-9370-1D4B31171CD7}"
+      DTS:ObjectName="Weather CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\DEV\BigData-BI\Part3-ETLing\data\no-header_Weather_Basel-City_Switzerland.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Year"
+              DTS:DTSID="{8C699E38-4E29-4345-8E71-429EB1F00A40}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Month"
+              DTS:DTSID="{7AB13273-3F6D-4556-8BB0-AB56CB24EDEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Day"
+              DTS:DTSID="{434CC569-F6C5-4833-B552-4420A8F7EAA8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hour"
+              DTS:DTSID="{DC95D0DD-C41F-460B-9622-92737D10F7F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Minute"
+              DTS:DTSID="{FD5E2A93-8E97-439F-9E31-AF1D2189F8CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Temperature daily mean  2 m above gnd "
+              DTS:DTSID="{5F205789-64B5-4A4C-92EF-9EB05CF8AE7C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Relative Humidity daily mean  2 m above gnd "
+              DTS:DTSID="{B74A695F-F9BB-4205-9398-8F62AF2D6E8B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mean Sea Level Pressure daily mean  MSL "
+              DTS:DTSID="{D2A3B80E-235D-4CDC-89AF-8382DA572B62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Precipitation daily sum  sfc "
+              DTS:DTSID="{AB337C96-6725-426C-A451-A2FBE652408E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Snowfall amount raw daily sum  sfc "
+              DTS:DTSID="{3E455D84-6566-49B0-B959-6338A9DCDAD3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Cloud Cover daily mean  sfc "
+              DTS:DTSID="{C841486A-B207-4EAA-B51B-D3AB345DBB36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="High Cloud Cover daily mean  high cld lay "
+              DTS:DTSID="{F7F105F5-C438-4ACD-9753-FEA1CA99D68F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Medium Cloud Cover daily mean  mid cld lay "
+              DTS:DTSID="{A741700A-4540-4C66-8DB3-1A5C5BBDEEA5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Low Cloud Cover daily mean  low cld lay "
+              DTS:DTSID="{2D3AE488-CF72-4ECE-8FA8-A87E97749549}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sunshine Duration daily sum  sfc "
+              DTS:DTSID="{4B4E94ED-2580-4AA4-A8EC-13DA7C4FC3D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Shortwave Radiation daily sum  sfc "
+              DTS:DTSID="{0E4DBD77-EB4D-41BD-9C75-50C8FA359F18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Speed daily mean  10 m above gnd "
+              DTS:DTSID="{9E3ECE97-C955-47DB-B15A-E1457DB33E29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Direction daily mean  10 m above gnd "
+              DTS:DTSID="{7125EE1C-F140-4D23-A460-1DD080CC4381}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Speed daily mean  80 m above gnd "
+              DTS:DTSID="{4CD7FFE7-0BDE-4D62-85E2-52234C4E195E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Direction daily mean  80 m above gnd "
+              DTS:DTSID="{771F91AA-F541-470D-A9A0-8D74877B5063}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Speed daily mean  900 mb "
+              DTS:DTSID="{90F92DD4-E5C4-4652-B9EB-D5B71E3E173B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Direction daily mean  900 mb "
+              DTS:DTSID="{E424E3F2-6B0E-4E8C-8421-6C82C5650132}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Gust daily mean  sfc "
+              DTS:DTSID="{43F9ACE1-B859-4FC3-A6B7-E9932BD0A8B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Temperature daily max  2 m above gnd "
+              DTS:DTSID="{04492321-7A62-4497-8877-DCC8BF36E555}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Temperature daily min  2 m above gnd "
+              DTS:DTSID="{6A6ED407-BC64-4859-A191-420B90CC8A27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Relative Humidity daily max  2 m above gnd "
+              DTS:DTSID="{3D802BC2-9983-484C-9397-DBB104D9C866}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Relative Humidity daily min  2 m above gnd "
+              DTS:DTSID="{38EE982D-746B-4766-9EAD-1231F4AB867B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mean Sea Level Pressure daily max  MSL "
+              DTS:DTSID="{54650259-F8AE-4803-B3C2-D06FDE484341}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mean Sea Level Pressure daily min  MSL "
+              DTS:DTSID="{33B2849D-856A-4FB7-9219-BCD0026B4AB0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Cloud Cover daily max  sfc "
+              DTS:DTSID="{2AAD2637-22C9-45C6-B5C3-773F0B52DC5A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Cloud Cover daily min  sfc "
+              DTS:DTSID="{FAAE34E7-A411-4DEA-A4EB-1C690B6BFB46}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="High Cloud Cover daily max  high cld lay "
+              DTS:DTSID="{8D4176C3-F674-46EB-834E-AAE2AEE4AADB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="High Cloud Cover daily min  high cld lay "
+              DTS:DTSID="{788AE85C-6920-4942-BAB0-E5EBF8EA4D35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Medium Cloud Cover daily max  mid cld lay "
+              DTS:DTSID="{2D06CEA2-2408-4BB8-AD73-B8EF02A08C44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Medium Cloud Cover daily min  mid cld lay "
+              DTS:DTSID="{BD48634A-69E0-4A6C-860E-43946F432EBA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Low Cloud Cover daily max  low cld lay "
+              DTS:DTSID="{6556F918-2577-457F-8885-C7C84C922DEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Low Cloud Cover daily min  low cld lay "
+              DTS:DTSID="{7E1D8078-79BB-4ADA-89BF-1CD67BB1613F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Speed daily max  10 m above gnd "
+              DTS:DTSID="{1C71973A-10E9-41BE-A982-ECE6DCDE8E17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Speed daily min  10 m above gnd "
+              DTS:DTSID="{19D4F676-42D9-4BE7-8FF2-9B7330B34C83}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Speed daily max  80 m above gnd "
+              DTS:DTSID="{C9B323BF-4328-4FF1-A0BD-54E66DE44A68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Speed daily min  80 m above gnd "
+              DTS:DTSID="{56A84850-2DEF-4BA2-B710-CCA6A33248C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Speed daily max  900 mb "
+              DTS:DTSID="{10C1CDAC-1A43-4F11-AA57-E142743F99EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Speed daily min  900 mb "
+              DTS:DTSID="{71152659-8CEC-4ABB-9F57-C1EA6690CFBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Gust daily max  sfc "
+              DTS:DTSID="{64E1F5F2-4A9E-4F3C-816F-31979EBEFF28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind Gust daily min  sfc "
+              DTS:DTSID="{41CA3C9C-7AFA-42DB-AB54-8B337EA1365B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -107,115 +533,109 @@
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.id]"
                       cachedDataType="nText"
                       cachedName="conversion_barcelona_listings.id"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[idHouseConfiguration]"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[id]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.id]" />
                     <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.property_type]"
                       cachedDataType="nText"
                       cachedName="conversion_barcelona_listings.property_type"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PropertyType]"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[propertyType]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.property_type]" />
                     <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.room_type]"
                       cachedDataType="nText"
                       cachedName="conversion_barcelona_listings.room_type"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RoomType]"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[roomType]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.room_type]" />
                     <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.accommodates]"
                       cachedDataType="nText"
                       cachedName="conversion_barcelona_listings.accommodates"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AccommodatesCount]"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[accommodatesCount]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.accommodates]" />
                     <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.bathrooms]"
                       cachedDataType="nText"
                       cachedName="conversion_barcelona_listings.bathrooms"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BathromsCount]"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[bathromsCount]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.bathrooms]" />
                     <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.bedrooms]"
                       cachedDataType="nText"
                       cachedName="conversion_barcelona_listings.bedrooms"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BedroomsCount]"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[bedroomsCount]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.bedrooms]" />
                     <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.beds]"
                       cachedDataType="nText"
                       cachedName="conversion_barcelona_listings.beds"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BedsCount]"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[bedsCount]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.beds]" />
                     <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.bed_type]"
                       cachedDataType="nText"
                       cachedName="conversion_barcelona_listings.bed_type"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BedType]"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[bedType]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.bed_type]" />
                     <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.amenities]"
                       cachedDataType="nText"
                       cachedName="conversion_barcelona_listings.amenities"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Amenities]"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[amenities]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.amenities]" />
                     <inputColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_listings.square_feet]"
                       cachedDataType="nText"
                       cachedName="conversion_barcelona_listings.square_feet"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SquareFeet]"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[squareFeet]"
                       lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_listings.square_feet]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[idHouseConfiguration]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[propertyType]"
                       dataType="wstr"
                       length="250"
-                      name="idHouseConfiguration" />
+                      name="propertyType" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PropertyType]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[roomType]"
                       dataType="wstr"
                       length="250"
-                      name="PropertyType" />
+                      name="roomType" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RoomType]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[accommodatesCount]"
+                      dataType="i4"
+                      name="accommodatesCount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[bathromsCount]"
+                      dataType="i4"
+                      name="bathromsCount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[bedroomsCount]"
+                      dataType="i4"
+                      name="bedroomsCount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[bedsCount]"
+                      dataType="i4"
+                      name="bedsCount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[bedType]"
                       dataType="wstr"
                       length="250"
-                      name="RoomType" />
+                      name="bedType" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AccommodatesCount]"
-                      dataType="wstr"
-                      length="250"
-                      name="AccommodatesCount" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BathromsCount]"
-                      dataType="wstr"
-                      length="250"
-                      name="BathromsCount" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BedroomsCount]"
-                      dataType="wstr"
-                      length="250"
-                      name="BedroomsCount" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BedsCount]"
-                      dataType="wstr"
-                      length="250"
-                      name="BedsCount" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BedType]"
-                      dataType="wstr"
-                      length="250"
-                      name="BedType" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Amenities]"
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[amenities]"
                       dataType="wstr"
                       length="1000"
-                      name="Amenities" />
+                      name="amenities" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SquareFeet]"
-                      dataType="wstr"
-                      length="250"
-                      name="SquareFeet" />
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[squareFeet]"
+                      dataType="i4"
+                      name="squareFeet" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2382,6 +2802,1980 @@
           SQLTask:SqlStatementSource="set sql_mode='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION,ANSI_QUOTES' " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Weather CSV Load"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{490FCC8B-B9C5-4932-8755-87FA495DB3E9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Weather CSV Load"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Weather CSV Load\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Weather"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Weather CSV Load\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Docker MemSQL]"
+                  connectionManagerRefId="Package.ConnectionManagers[Docker MemSQL]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Year]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[year]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Month]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Month"
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[month]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Day]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Day"
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[day]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Day]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Hour]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Hour"
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[hour]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Hour]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Minute]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Minute"
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[minute]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Minute]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Gust daily min  sfc ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Gust daily min  sfc "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windGustDailyMin]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Gust daily min  sfc ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Gust daily max  sfc ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Gust daily max  sfc "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windGustDailyMax]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Gust daily max  sfc ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Speed daily min  900 mb ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Speed daily min  900 mb "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMin900mb]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily min  900 mb ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Speed daily max  900 mb ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Speed daily max  900 mb "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMax900mb]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily max  900 mb ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Speed daily min  80 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Speed daily min  80 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMin80m]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily min  80 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Speed daily max  80 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Speed daily max  80 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMax80m]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily max  80 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Temperature daily mean  2 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Temperature daily mean  2 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[temperatureDailyMean]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature daily mean  2 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Relative Humidity daily mean  2 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Relative Humidity daily mean  2 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[relativeHumidityDailyMean]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Relative Humidity daily mean  2 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Mean Sea Level Pressure daily mean  MSL ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Mean Sea Level Pressure daily mean  MSL "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[meanSeaLevelPressureDailyMean]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Mean Sea Level Pressure daily mean  MSL ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Total Precipitation daily sum  sfc ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total Precipitation daily sum  sfc "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[totalPrecipitationDailySum]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Precipitation daily sum  sfc ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Snowfall amount raw daily sum  sfc ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Snowfall amount raw daily sum  sfc "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[snowfallAmountRawDailySum]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Snowfall amount raw daily sum  sfc ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Total Cloud Cover daily mean  sfc ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total Cloud Cover daily mean  sfc "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[totalCloudCoverDailyMean]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Cloud Cover daily mean  sfc ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[High Cloud Cover daily mean  high cld lay ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="High Cloud Cover daily mean  high cld lay "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[highCloudCoverDailyMean]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[High Cloud Cover daily mean  high cld lay ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Medium Cloud Cover daily mean  mid cld lay ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Medium Cloud Cover daily mean  mid cld lay "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[mediumCloudCoverDailyMean]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Medium Cloud Cover daily mean  mid cld lay ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Low Cloud Cover daily mean  low cld lay ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Low Cloud Cover daily mean  low cld lay "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[lowCloudCoverDailyMean]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Low Cloud Cover daily mean  low cld lay ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Sunshine Duration daily sum  sfc ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sunshine Duration daily sum  sfc "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[sunshineDurationDailySum]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Sunshine Duration daily sum  sfc ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Shortwave Radiation daily sum  sfc ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Shortwave Radiation daily sum  sfc "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[shortwaveRadiationDailySum]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Shortwave Radiation daily sum  sfc ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Speed daily mean  10 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Speed daily mean  10 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMean10m]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily mean  10 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Direction daily mean  10 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Direction daily mean  10 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windDirectionDailyMean10m]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Direction daily mean  10 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Speed daily mean  80 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Speed daily mean  80 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMean80m]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily mean  80 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Direction daily mean  80 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Direction daily mean  80 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windDirectionDailyMean80m]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Direction daily mean  80 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Speed daily mean  900 mb ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Speed daily mean  900 mb "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMean900mb]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily mean  900 mb ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Direction daily mean  900 mb ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Direction daily mean  900 mb "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windDirectionDailyMean900mb]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Direction daily mean  900 mb ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Gust daily mean  sfc ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Gust daily mean  sfc "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windGustDailyMean]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Gust daily mean  sfc ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Temperature daily max  2 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Temperature daily max  2 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[temperatureDailyMax]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature daily max  2 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Temperature daily min  2 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Temperature daily min  2 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[temperatureDailyMin]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature daily min  2 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Relative Humidity daily max  2 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Relative Humidity daily max  2 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[relativeHumidityDailyMax]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Relative Humidity daily max  2 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Relative Humidity daily min  2 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Relative Humidity daily min  2 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[relativeHumidityDailyMin]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Relative Humidity daily min  2 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Mean Sea Level Pressure daily max  MSL ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Mean Sea Level Pressure daily max  MSL "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[meanSeaLevelPressureDailyMax]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Mean Sea Level Pressure daily max  MSL ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Mean Sea Level Pressure daily min  MSL ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Mean Sea Level Pressure daily min  MSL "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[meanSeaLevelPressureDailyMin]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Mean Sea Level Pressure daily min  MSL ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Total Cloud Cover daily max  sfc ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total Cloud Cover daily max  sfc "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[totalCloudCoverDailyMax]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Cloud Cover daily max  sfc ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Total Cloud Cover daily min  sfc ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total Cloud Cover daily min  sfc "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[totalCloudCoverDailyMin]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Cloud Cover daily min  sfc ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[High Cloud Cover daily max  high cld lay ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="High Cloud Cover daily max  high cld lay "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[highCloudCoverDailyMax]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[High Cloud Cover daily max  high cld lay ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[High Cloud Cover daily min  high cld lay ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="High Cloud Cover daily min  high cld lay "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[highCloudCoverDailyMin]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[High Cloud Cover daily min  high cld lay ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Medium Cloud Cover daily max  mid cld lay ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Medium Cloud Cover daily max  mid cld lay "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[mediumCloudCoverDailyMax]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Medium Cloud Cover daily max  mid cld lay ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Medium Cloud Cover daily min  mid cld lay ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Medium Cloud Cover daily min  mid cld lay "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[mediumCloudCoverDailyMin]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Medium Cloud Cover daily min  mid cld lay ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Low Cloud Cover daily max  low cld lay ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Low Cloud Cover daily max  low cld lay "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[lowCloudCoverDailyMax]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Low Cloud Cover daily max  low cld lay ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Low Cloud Cover daily min  low cld lay ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Low Cloud Cover daily min  low cld lay "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[lowCloudCoverDailyMin]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Low Cloud Cover daily min  low cld lay ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Speed daily max  10 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Speed daily max  10 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMax10m]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily max  10 m above gnd ]" />
+                    <inputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Wind Speed daily min  10 m above gnd ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind Speed daily min  10 m above gnd "
+                      externalMetadataColumnId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMin10m]"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily min  10 m above gnd ]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[month]"
+                      dataType="i4"
+                      name="month" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[day]"
+                      dataType="i4"
+                      name="day" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[hour]"
+                      dataType="i4"
+                      name="hour" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[minute]"
+                      dataType="i4"
+                      name="minute" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[temperatureDailyMean]"
+                      dataType="r4"
+                      name="temperatureDailyMean" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[relativeHumidityDailyMean]"
+                      dataType="r4"
+                      name="relativeHumidityDailyMean" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[meanSeaLevelPressureDailyMean]"
+                      dataType="r4"
+                      name="meanSeaLevelPressureDailyMean" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[totalPrecipitationDailySum]"
+                      dataType="r4"
+                      name="totalPrecipitationDailySum" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[snowfallAmountRawDailySum]"
+                      dataType="r4"
+                      name="snowfallAmountRawDailySum" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[totalCloudCoverDailyMean]"
+                      dataType="r4"
+                      name="totalCloudCoverDailyMean" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[highCloudCoverDailyMean]"
+                      dataType="r4"
+                      name="highCloudCoverDailyMean" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[mediumCloudCoverDailyMean]"
+                      dataType="r4"
+                      name="mediumCloudCoverDailyMean" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[lowCloudCoverDailyMean]"
+                      dataType="r4"
+                      name="lowCloudCoverDailyMean" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[sunshineDurationDailySum]"
+                      dataType="r4"
+                      name="sunshineDurationDailySum" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[shortwaveRadiationDailySum]"
+                      dataType="r4"
+                      name="shortwaveRadiationDailySum" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMean10m]"
+                      dataType="r4"
+                      name="windSpeedDailyMean10m" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windDirectionDailyMean10m]"
+                      dataType="r4"
+                      name="windDirectionDailyMean10m" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMean80m]"
+                      dataType="r4"
+                      name="windSpeedDailyMean80m" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windDirectionDailyMean80m]"
+                      dataType="r4"
+                      name="windDirectionDailyMean80m" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMean900mb]"
+                      dataType="r4"
+                      name="windSpeedDailyMean900mb" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windDirectionDailyMean900mb]"
+                      dataType="r4"
+                      name="windDirectionDailyMean900mb" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windGustDailyMean]"
+                      dataType="r4"
+                      name="windGustDailyMean" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[temperatureDailyMax]"
+                      dataType="r4"
+                      name="temperatureDailyMax" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[temperatureDailyMin]"
+                      dataType="r4"
+                      name="temperatureDailyMin" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[relativeHumidityDailyMax]"
+                      dataType="r4"
+                      name="relativeHumidityDailyMax" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[relativeHumidityDailyMin]"
+                      dataType="r4"
+                      name="relativeHumidityDailyMin" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[meanSeaLevelPressureDailyMax]"
+                      dataType="r4"
+                      name="meanSeaLevelPressureDailyMax" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[meanSeaLevelPressureDailyMin]"
+                      dataType="r4"
+                      name="meanSeaLevelPressureDailyMin" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[totalCloudCoverDailyMax]"
+                      dataType="r4"
+                      name="totalCloudCoverDailyMax" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[totalCloudCoverDailyMin]"
+                      dataType="r4"
+                      name="totalCloudCoverDailyMin" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[highCloudCoverDailyMax]"
+                      dataType="r4"
+                      name="highCloudCoverDailyMax" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[highCloudCoverDailyMin]"
+                      dataType="r4"
+                      name="highCloudCoverDailyMin" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[mediumCloudCoverDailyMax]"
+                      dataType="r4"
+                      name="mediumCloudCoverDailyMax" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[mediumCloudCoverDailyMin]"
+                      dataType="r4"
+                      name="mediumCloudCoverDailyMin" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[lowCloudCoverDailyMax]"
+                      dataType="r4"
+                      name="lowCloudCoverDailyMax" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[lowCloudCoverDailyMin]"
+                      dataType="r4"
+                      name="lowCloudCoverDailyMin" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMax10m]"
+                      dataType="r4"
+                      name="windSpeedDailyMax10m" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMin10m]"
+                      dataType="r4"
+                      name="windSpeedDailyMin10m" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMax80m]"
+                      dataType="r4"
+                      name="windSpeedDailyMax80m" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMin80m]"
+                      dataType="r4"
+                      name="windSpeedDailyMin80m" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMax900mb]"
+                      dataType="r4"
+                      name="windSpeedDailyMax900mb" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windSpeedDailyMin900mb]"
+                      dataType="r4"
+                      name="windSpeedDailyMin900mb" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windGustDailyMax]"
+                      dataType="r4"
+                      name="windGustDailyMax" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[windGustDailyMin]"
+                      dataType="r4"
+                      name="windGustDailyMin" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Weather CSV Load\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Weather CSV Load\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Weather CSV Load\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Weather CSV Load\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Weather CSV Load\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Weather CSV Load\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Weather CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[Weather CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Year]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Month]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Month]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Day]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Day]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Day]"
+                      name="Day"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Hour]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Hour]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Hour]"
+                      name="Hour"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Minute]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Minute]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Minute]"
+                      name="Minute"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature daily mean  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Temperature daily mean  2 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature daily mean  2 m above gnd ]"
+                      name="Temperature daily mean  2 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Relative Humidity daily mean  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Relative Humidity daily mean  2 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Relative Humidity daily mean  2 m above gnd ]"
+                      name="Relative Humidity daily mean  2 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Mean Sea Level Pressure daily mean  MSL ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mean Sea Level Pressure daily mean  MSL ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Mean Sea Level Pressure daily mean  MSL ]"
+                      name="Mean Sea Level Pressure daily mean  MSL "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Precipitation daily sum  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total Precipitation daily sum  sfc ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Precipitation daily sum  sfc ]"
+                      name="Total Precipitation daily sum  sfc "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Snowfall amount raw daily sum  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Snowfall amount raw daily sum  sfc ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Snowfall amount raw daily sum  sfc ]"
+                      name="Snowfall amount raw daily sum  sfc "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Cloud Cover daily mean  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total Cloud Cover daily mean  sfc ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Cloud Cover daily mean  sfc ]"
+                      name="Total Cloud Cover daily mean  sfc "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[High Cloud Cover daily mean  high cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[High Cloud Cover daily mean  high cld lay ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[High Cloud Cover daily mean  high cld lay ]"
+                      name="High Cloud Cover daily mean  high cld lay "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Medium Cloud Cover daily mean  mid cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Medium Cloud Cover daily mean  mid cld lay ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Medium Cloud Cover daily mean  mid cld lay ]"
+                      name="Medium Cloud Cover daily mean  mid cld lay "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Low Cloud Cover daily mean  low cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Low Cloud Cover daily mean  low cld lay ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Low Cloud Cover daily mean  low cld lay ]"
+                      name="Low Cloud Cover daily mean  low cld lay "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Sunshine Duration daily sum  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sunshine Duration daily sum  sfc ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Sunshine Duration daily sum  sfc ]"
+                      name="Sunshine Duration daily sum  sfc "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Shortwave Radiation daily sum  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shortwave Radiation daily sum  sfc ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Shortwave Radiation daily sum  sfc ]"
+                      name="Shortwave Radiation daily sum  sfc "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily mean  10 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily mean  10 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily mean  10 m above gnd ]"
+                      name="Wind Speed daily mean  10 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Direction daily mean  10 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Direction daily mean  10 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Direction daily mean  10 m above gnd ]"
+                      name="Wind Direction daily mean  10 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily mean  80 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily mean  80 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily mean  80 m above gnd ]"
+                      name="Wind Speed daily mean  80 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Direction daily mean  80 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Direction daily mean  80 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Direction daily mean  80 m above gnd ]"
+                      name="Wind Direction daily mean  80 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily mean  900 mb ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily mean  900 mb ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily mean  900 mb ]"
+                      name="Wind Speed daily mean  900 mb "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Direction daily mean  900 mb ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Direction daily mean  900 mb ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Direction daily mean  900 mb ]"
+                      name="Wind Direction daily mean  900 mb "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Gust daily mean  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Gust daily mean  sfc ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Gust daily mean  sfc ]"
+                      name="Wind Gust daily mean  sfc "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature daily max  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Temperature daily max  2 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature daily max  2 m above gnd ]"
+                      name="Temperature daily max  2 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature daily min  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Temperature daily min  2 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature daily min  2 m above gnd ]"
+                      name="Temperature daily min  2 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Relative Humidity daily max  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Relative Humidity daily max  2 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Relative Humidity daily max  2 m above gnd ]"
+                      name="Relative Humidity daily max  2 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Relative Humidity daily min  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Relative Humidity daily min  2 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Relative Humidity daily min  2 m above gnd ]"
+                      name="Relative Humidity daily min  2 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Mean Sea Level Pressure daily max  MSL ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mean Sea Level Pressure daily max  MSL ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Mean Sea Level Pressure daily max  MSL ]"
+                      name="Mean Sea Level Pressure daily max  MSL "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Mean Sea Level Pressure daily min  MSL ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mean Sea Level Pressure daily min  MSL ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Mean Sea Level Pressure daily min  MSL ]"
+                      name="Mean Sea Level Pressure daily min  MSL "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Cloud Cover daily max  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total Cloud Cover daily max  sfc ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Cloud Cover daily max  sfc ]"
+                      name="Total Cloud Cover daily max  sfc "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Cloud Cover daily min  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total Cloud Cover daily min  sfc ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Total Cloud Cover daily min  sfc ]"
+                      name="Total Cloud Cover daily min  sfc "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[High Cloud Cover daily max  high cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[High Cloud Cover daily max  high cld lay ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[High Cloud Cover daily max  high cld lay ]"
+                      name="High Cloud Cover daily max  high cld lay "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[High Cloud Cover daily min  high cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[High Cloud Cover daily min  high cld lay ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[High Cloud Cover daily min  high cld lay ]"
+                      name="High Cloud Cover daily min  high cld lay "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Medium Cloud Cover daily max  mid cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Medium Cloud Cover daily max  mid cld lay ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Medium Cloud Cover daily max  mid cld lay ]"
+                      name="Medium Cloud Cover daily max  mid cld lay "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Medium Cloud Cover daily min  mid cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Medium Cloud Cover daily min  mid cld lay ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Medium Cloud Cover daily min  mid cld lay ]"
+                      name="Medium Cloud Cover daily min  mid cld lay "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Low Cloud Cover daily max  low cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Low Cloud Cover daily max  low cld lay ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Low Cloud Cover daily max  low cld lay ]"
+                      name="Low Cloud Cover daily max  low cld lay "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Low Cloud Cover daily min  low cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Low Cloud Cover daily min  low cld lay ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Low Cloud Cover daily min  low cld lay ]"
+                      name="Low Cloud Cover daily min  low cld lay "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily max  10 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily max  10 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily max  10 m above gnd ]"
+                      name="Wind Speed daily max  10 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily min  10 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily min  10 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily min  10 m above gnd ]"
+                      name="Wind Speed daily min  10 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily max  80 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily max  80 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily max  80 m above gnd ]"
+                      name="Wind Speed daily max  80 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily min  80 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily min  80 m above gnd ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily min  80 m above gnd ]"
+                      name="Wind Speed daily min  80 m above gnd "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily max  900 mb ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily max  900 mb ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily max  900 mb ]"
+                      name="Wind Speed daily max  900 mb "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily min  900 mb ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily min  900 mb ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Speed daily min  900 mb ]"
+                      name="Wind Speed daily min  900 mb "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Gust daily max  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Gust daily max  sfc ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Gust daily max  sfc ]"
+                      name="Wind Gust daily max  sfc "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Gust daily min  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Gust daily min  sfc ]"
+                      length="50"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].Columns[Wind Gust daily min  sfc ]"
+                      name="Wind Gust daily min  sfc "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Month]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Day]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Hour]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Hour" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Minute]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Minute" />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Temperature daily mean  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Temperature daily mean  2 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Relative Humidity daily mean  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Relative Humidity daily mean  2 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mean Sea Level Pressure daily mean  MSL ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Mean Sea Level Pressure daily mean  MSL " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total Precipitation daily sum  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total Precipitation daily sum  sfc " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Snowfall amount raw daily sum  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Snowfall amount raw daily sum  sfc " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total Cloud Cover daily mean  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total Cloud Cover daily mean  sfc " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[High Cloud Cover daily mean  high cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="High Cloud Cover daily mean  high cld lay " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Medium Cloud Cover daily mean  mid cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Medium Cloud Cover daily mean  mid cld lay " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Low Cloud Cover daily mean  low cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Low Cloud Cover daily mean  low cld lay " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sunshine Duration daily sum  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sunshine Duration daily sum  sfc " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shortwave Radiation daily sum  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Shortwave Radiation daily sum  sfc " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily mean  10 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Speed daily mean  10 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Direction daily mean  10 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Direction daily mean  10 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily mean  80 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Speed daily mean  80 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Direction daily mean  80 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Direction daily mean  80 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily mean  900 mb ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Speed daily mean  900 mb " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Direction daily mean  900 mb ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Direction daily mean  900 mb " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Gust daily mean  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Gust daily mean  sfc " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Temperature daily max  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Temperature daily max  2 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Temperature daily min  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Temperature daily min  2 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Relative Humidity daily max  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Relative Humidity daily max  2 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Relative Humidity daily min  2 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Relative Humidity daily min  2 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mean Sea Level Pressure daily max  MSL ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Mean Sea Level Pressure daily max  MSL " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mean Sea Level Pressure daily min  MSL ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Mean Sea Level Pressure daily min  MSL " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total Cloud Cover daily max  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total Cloud Cover daily max  sfc " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total Cloud Cover daily min  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total Cloud Cover daily min  sfc " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[High Cloud Cover daily max  high cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="High Cloud Cover daily max  high cld lay " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[High Cloud Cover daily min  high cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="High Cloud Cover daily min  high cld lay " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Medium Cloud Cover daily max  mid cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Medium Cloud Cover daily max  mid cld lay " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Medium Cloud Cover daily min  mid cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Medium Cloud Cover daily min  mid cld lay " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Low Cloud Cover daily max  low cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Low Cloud Cover daily max  low cld lay " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Low Cloud Cover daily min  low cld lay ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Low Cloud Cover daily min  low cld lay " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily max  10 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Speed daily max  10 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily min  10 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Speed daily min  10 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily max  80 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Speed daily max  80 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily min  80 m above gnd ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Speed daily min  80 m above gnd " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily max  900 mb ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Speed daily max  900 mb " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Speed daily min  900 mb ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Speed daily min  900 mb " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Gust daily max  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Gust daily max  sfc " />
+                    <externalMetadataColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind Gust daily min  sfc ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind Gust daily min  sfc " />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Weather CSV Load.Paths[Flat File Source Output]"
+              endId="Package\Weather CSV Load\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Weather CSV Load\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2392,6 +4786,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{FDDB7E20-69E6-4107-B43E-F360A20B822F}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Weather CSV Load" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2404,7 +4806,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
@@ -2413,6 +4815,10 @@
           Size="200.8,41.6"
           Id="Package\MemSQL Compatibility Fix"
           TopLeft="64.0000010899135,29.3647062941819" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Weather CSV Load"
+          TopLeft="168.571431442183,283.247062795962" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="164.400001089913,70.9647062941819">
@@ -2447,6 +4853,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="201.271430624748,201.876472758917">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.5000008174354,81.3705900370453"
+              Start="0,0"
+              End="50.5000008174354,73.8705900370453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.6852950185227" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.6852950185227"
+                    Point2="0,40.6852950185227"
+                    Point3="4,40.6852950185227" />
+                  <mssgle:LineSegment
+                    End="46.5000008174354,40.6852950185227" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.5000008174354,40.6852950185227"
+                    Point2="50.5000008174354,40.6852950185227"
+                    Point3="50.5000008174354,44.6852950185227" />
+                  <mssgle:LineSegment
+                    End="50.5000008174354,73.8705900370453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2467,40 +4907,6 @@
           Size="178.4,41.6"
           Id="Package\Data Flow Task\ADO NET Destination"
           TopLeft="118.285716300108,261.223533075326" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
-          TopLeft="210.228573666787,70.3529415797198">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="49.085715142075,81.3647076068862"
-              Start="0,0"
-              End="49.085715142075,73.8647076068862">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.6823538034431" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.6823538034431"
-                    Point2="0,40.6823538034431"
-                    Point3="4,40.6823538034431" />
-                  <mssgle:LineSegment
-                    End="45.085715142075,40.6823538034431" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45.085715142075,40.6823538034431"
-                    Point2="49.085715142075,40.6823538034431"
-                    Point3="49.085715142075,44.6823538034431" />
-                  <mssgle:LineSegment
-                    End="49.085715142075,73.8647076068862" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
           TopLeft="259.314288808862,193.317649186606">
@@ -2535,6 +4941,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
+          TopLeft="210.228573666787,70.3529415797198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.085715142075,81.3647076068862"
+              Start="0,0"
+              End="49.085715142075,73.8647076068862">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.6823538034431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.6823538034431"
+                    Point2="0,40.6823538034431"
+                    Point3="4,40.6823538034431" />
+                  <mssgle:LineSegment
+                    End="45.085715142075,40.6823538034431" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.085715142075,40.6823538034431"
+                    Point2="49.085715142075,40.6823538034431"
+                    Point3="49.085715142075,44.6823538034431" />
+                  <mssgle:LineSegment
+                    End="49.085715142075,73.8647076068862" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2548,6 +4988,52 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Weather CSV Load">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Weather CSV Load\Flat File Source"
+          TopLeft="148.814283563653,34.5823525636666" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Weather CSV Load\ADO NET Destination"
+          TopLeft="140.357145153746,208.605885201425" />
+        <EdgeLayout
+          Id="Package\Weather CSV Load.Paths[Flat File Source Output]"
+          TopLeft="226.7857143587,76.1823525636666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,132.423532637758"
+              Start="0,0"
+              End="0,124.923532637758">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,124.923532637758" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Weather CSV Load\ADO NET Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
