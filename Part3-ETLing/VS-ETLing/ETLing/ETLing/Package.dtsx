@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{AB062DAA-3A79-4948-B260-4C0E1AE17BF6}">
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{FACD87EC-CB8F-4880-B5BD-249582747926}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -470,7 +470,6 @@
       DTS:refId="Package\Barcelona Booking"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{822DBB4B-30C0-46E4-B617-E1BC91BE1DE8}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -3782,17 +3781,17 @@
                   name="ADO NET Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Barcelona PricingRanking\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_pricing.price]"
+                      refId="Package\Barcelona PricingRanking\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_pricing.price]"
                       cachedDataType="nText"
-                      cachedName="barcelona_pricing.price"
+                      cachedName="conversion_barcelona_pricing.price"
                       externalMetadataColumnId="Package\Barcelona PricingRanking\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[price]"
-                      lineageId="Package\Barcelona PricingRanking\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_pricing.price]" />
+                      lineageId="Package\Barcelona PricingRanking\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_pricing.price]" />
                     <inputColumn
-                      refId="Package\Barcelona PricingRanking\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[barcelona_pricing.id_count]"
-                      cachedDataType="i8"
-                      cachedName="barcelona_pricing.id_count"
+                      refId="Package\Barcelona PricingRanking\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[conversion_barcelona_pricing.id_count]"
+                      cachedDataType="i4"
+                      cachedName="conversion_barcelona_pricing.id_count"
                       externalMetadataColumnId="Package\Barcelona PricingRanking\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[count]"
-                      lineageId="Package\Barcelona PricingRanking\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_pricing.id_count]" />
+                      lineageId="Package\Barcelona PricingRanking\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_pricing.id_count]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3963,15 +3962,15 @@
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Barcelona PricingRanking\Data Conversion.Inputs[Data Conversion Input].Columns[barcelona_cleanliness.review_scores_cleanliness]"
+                      refId="Package\Barcelona PricingRanking\Data Conversion.Inputs[Data Conversion Input].Columns[barcelona_pricing.price]"
                       cachedDataType="nText"
-                      cachedName="barcelona_cleanliness.review_scores_cleanliness"
-                      lineageId="Package\Barcelona PricingRanking\Data Conversion.Inputs[Data Conversion Input]" />
+                      cachedName="barcelona_pricing.price"
+                      lineageId="Package\Barcelona PricingRanking\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_pricing.price]" />
                     <inputColumn
-                      refId="Package\Barcelona PricingRanking\Data Conversion.Inputs[Data Conversion Input].Columns[barcelona_cleanliness.id_count]"
+                      refId="Package\Barcelona PricingRanking\Data Conversion.Inputs[Data Conversion Input].Columns[barcelona_pricing.id_count]"
                       cachedDataType="i8"
-                      cachedName="barcelona_cleanliness.id_count"
-                      lineageId="Package\Barcelona PricingRanking\Data Conversion.Inputs[Data Conversion Input].Columns[barcelona_cleanliness.review_scores_cleanliness]" />
+                      cachedName="barcelona_pricing.id_count"
+                      lineageId="Package\Barcelona PricingRanking\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_pricing.id_count]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3984,19 +3983,19 @@
                   synchronousInputId="Package\Barcelona PricingRanking\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Barcelona PricingRanking\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_cleanliness.review_scores_cleanliness]"
+                      refId="Package\Barcelona PricingRanking\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_pricing.price]"
                       dataType="nText"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Barcelona PricingRanking\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_cleanliness.review_scores_cleanliness]"
-                      name="conversion_barcelona_cleanliness.review_scores_cleanliness"
+                      lineageId="Package\Barcelona PricingRanking\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_pricing.price]"
+                      name="conversion_barcelona_pricing.price"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Barcelona PricingRanking\Data Conversion.Inputs[Data Conversion Input]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Barcelona PricingRanking\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_pricing.price]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -4004,19 +4003,19 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Barcelona PricingRanking\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_cleanliness.id_count]"
+                      refId="Package\Barcelona PricingRanking\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_pricing.id_count]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Barcelona PricingRanking\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_cleanliness.id_count]"
-                      name="conversion_barcelona_cleanliness.id_count"
+                      lineageId="Package\Barcelona PricingRanking\Data Conversion.Outputs[Data Conversion Output].Columns[conversion_barcelona_pricing.id_count]"
+                      name="conversion_barcelona_pricing.id_count"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Barcelona PricingRanking\Data Conversion.Inputs[Data Conversion Input].Columns[barcelona_cleanliness.review_scores_cleanliness]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Barcelona PricingRanking\ADO NET Source.Outputs[ADO NET Source Output].Columns[barcelona_pricing.id_count]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -6120,87 +6119,59 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="220,41.6"
-          Id="Package\Barcelona HouseConfiguration"
-          TopLeft="211.1,107.1" />
-        <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\Barcelona Fact"
-          TopLeft="255.214289966895,614.958822405462" />
-        <NodeLayout
-          Size="200.8,41.6"
-          Id="Package\MemSQL Compatibility Fix"
-          TopLeft="220.7,5.49999999999995" />
-        <NodeLayout
-          Size="215.2,41.6"
-          Id="Package\Barcelona Weather from CSV"
-          TopLeft="213.5,513.5" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="321.1,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="165.6,41.6"
           Id="Package\Barcelona Booking"
-          TopLeft="238.3,208.7" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="321.1,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="110.096826714886,168.59542427415" />
         <NodeLayout
           Size="205.6,41.6"
           Id="Package\Barcelona CleaningRanking"
-          TopLeft="218.3,310.3" />
+          TopLeft="326.096830733941,211.466011685786" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Barcelona Fact"
+          TopLeft="125.582541107645,385.348362790892" />
+        <NodeLayout
+          Size="220,41.6"
+          Id="Package\Barcelona HouseConfiguration"
+          TopLeft="321.753973639741,101.254248284029" />
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Barcelona PricingRanking"
+          TopLeft="76.2111121177674,287.983658392839" />
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\Barcelona Weather from CSV"
+          TopLeft="341.296831074539,321.066010373081" />
+        <NodeLayout
+          Size="200.8,41.6"
+          Id="Package\MemSQL Compatibility Fix"
+          TopLeft="59.3539690076089,40.0307194385286" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="321.1,250.3">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="260.153969007609,60.8307194385286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="61.6000046321325,61.2235288454999"
               Start="0,0"
-              End="0,52.5">
+              End="54.1000046321325,61.2235288454999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="26.8000023160662,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.8000023160662,0"
+                    Point2="30.8000023160662,0"
+                    Point3="30.8000023160662,4" />
+                  <mssgle:LineSegment
+                    End="30.8000023160662,57.2235288454999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.8000023160662,57.2235288454999"
+                    Point2="30.8000023160662,61.2235288454999"
+                    Point3="34.8000023160662,61.2235288454999" />
+                  <mssgle:LineSegment
+                    End="54.1000046321325,61.2235288454999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6209,24 +6180,100 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="196.8,41.6"
-          Id="Package\Barcelona PricingRanking"
-          TopLeft="222.7,411.9" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="321.1,351.9">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="275.696826714885,189.39542427415">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="50.4000040190562,37.2705874116363"
               Start="0,0"
-              End="0,52.5">
+              End="42.9000040190562,37.2705874116363">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="25.1200023221214,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.1200023221214,0"
+                    Point2="29.1200023221214,0"
+                    Point3="29.1200023221214,4" />
+                  <mssgle:LineSegment
+                    End="29.1200023221214,33.2705874116363" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.1200023221214,33.2705874116363"
+                    Point2="29.1200023221214,37.2705874116363"
+                    Point3="33.1200023221214,37.2705874116363" />
+                  <mssgle:LineSegment
+                    End="42.9000040190562,37.2705874116363" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="431.753973639741,142.854248284029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-238.857146924856,25.741175990121"
+              Start="0,0"
+              End="-238.857146924856,18.241175990121">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.87058799506053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.87058799506053"
+                    Point2="0,12.8705879950605"
+                    Point3="-4,12.8705879950605" />
+                  <mssgle:LineSegment
+                    End="-234.857146924856,12.8705879950605" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-234.857146924856,12.8705879950605"
+                    Point2="-238.857146924856,12.8705879950605"
+                    Point3="-238.857146924856,16.8705879950605" />
+                  <mssgle:LineSegment
+                    End="-238.857146924856,18.241175990121" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="428.896830733942,253.066011685786">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-254.285718616174,34.917646707053"
+              Start="0,0"
+              End="-254.285718616174,27.417646707053">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4588233535265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4588233535265"
+                    Point2="0,17.4588233535265"
+                    Point3="-4,17.4588233535265" />
+                  <mssgle:LineSegment
+                    End="-250.285718616174,17.4588233535265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-250.285718616174,17.4588233535265"
+                    Point2="-254.285718616174,17.4588233535265"
+                    Point3="-254.285718616174,21.4588233535265" />
+                  <mssgle:LineSegment
+                    End="-254.285718616174,27.417646707053" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6237,18 +6284,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="321.1,453.5">
+          TopLeft="273.011112117767,308.783658392839">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="68.2857189567721,33.0823519802424"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="60.7857189567721,33.0823519802424">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="30.1428594783861,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.1428594783861,0"
+                    Point2="34.1428594783861,0"
+                    Point3="34.1428594783861,4" />
+                  <mssgle:LineSegment
+                    End="34.1428594783861,29.0823519802424" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.1428594783861,29.0823519802424"
+                    Point2="34.1428594783861,33.0823519802424"
+                    Point3="38.1428594783861,33.0823519802424" />
+                  <mssgle:LineSegment
+                    End="60.7857189567721,33.0823519802424" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6259,18 +6318,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="324.957144983447,555.1">
+          TopLeft="448.896831074539,362.666010373081">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.858822405462"
+              EndConnector="-249.714289966895,22.6823524178106"
               Start="0,0"
-              End="0,52.358822405462">
+              End="-249.714289966895,15.1823524178106">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.358822405462" />
+                    End="0,7.34117620890527" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.34117620890527"
+                    Point2="0,11.3411762089053"
+                    Point3="-4,11.3411762089053" />
+                  <mssgle:LineSegment
+                    End="-245.714289966895,11.3411762089053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-245.714289966895,11.3411762089053"
+                    Point2="-249.714289966895,11.3411762089053"
+                    Point3="-249.714289966895,15.3411762089053" />
+                  <mssgle:LineSegment
+                    End="-249.714289966895,15.1823524178106" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6282,6 +6353,234 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Barcelona Booking">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Barcelona Booking\MemSQL Booking"
+          TopLeft="160.8,342.4" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Barcelona Booking\From Hive Calendar"
+          TopLeft="89.6,39.2" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Barcelona Booking\Data Conversion"
+          TopLeft="272.8,167.2" />
+        <EdgeLayout
+          Id="Package\Barcelona Booking.Paths[Data Conversion Output]"
+          TopLeft="350.4,208.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-109.2,133.6"
+              Start="0,0"
+              End="-109.2,126.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.8"
+                    Point2="0,66.8"
+                    Point3="-4,66.8" />
+                  <mssgle:LineSegment
+                    End="-105.2,66.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-105.2,66.8"
+                    Point2="-109.2,66.8"
+                    Point3="-109.2,70.8" />
+                  <mssgle:LineSegment
+                    End="-109.2,126.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Barcelona Booking.Paths[ADO NET Source Output]"
+          TopLeft="175.2,80.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="175.2,86.4000000000001"
+              Start="0,0"
+              End="175.2,78.9000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.2000000000001"
+                    Point2="0,43.2000000000001"
+                    Point3="4,43.2000000000001" />
+                  <mssgle:LineSegment
+                    End="171.2,43.2000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="171.2,43.2000000000001"
+                    Point2="175.2,43.2000000000001"
+                    Point3="175.2,47.2000000000001" />
+                  <mssgle:LineSegment
+                    End="175.2,78.9000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Barcelona Booking\MemSQL Booking">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Barcelona Booking\From Hive Calendar">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Barcelona CleaningRanking">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Barcelona CleaningRanking\ADO NET Source"
+          TopLeft="60.8,26.4" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Barcelona CleaningRanking\ADO NET Destination"
+          TopLeft="121.6,274.4" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Barcelona CleaningRanking\Data Conversion"
+          TopLeft="200,145.6" />
+        <EdgeLayout
+          Id="Package\Barcelona CleaningRanking.Paths[Data Conversion Output]"
+          TopLeft="277.6,187.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-66.8,87.2"
+              Start="0,0"
+              End="-66.8,79.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.6"
+                    Point2="0,43.6"
+                    Point3="-4,43.6" />
+                  <mssgle:LineSegment
+                    End="-62.8,43.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62.8,43.6"
+                    Point2="-66.8,43.6"
+                    Point3="-66.8,47.6" />
+                  <mssgle:LineSegment
+                    End="-66.8,79.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Barcelona CleaningRanking.Paths[ADO NET Source Output]"
+          TopLeft="139.6,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138,77.6"
+              Start="0,0"
+              End="138,70.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.8"
+                    Point2="0,38.8"
+                    Point3="4,38.8" />
+                  <mssgle:LineSegment
+                    End="134,38.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="134,38.8"
+                    Point2="138,38.8"
+                    Point3="138,42.8" />
+                  <mssgle:LineSegment
+                    End="138,70.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Barcelona CleaningRanking\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Barcelona CleaningRanking\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Barcelona Fact">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="247.2,41.6"
+          Id="Package\Barcelona Fact\HouseConfiguration Last inserted Id"
+          TopLeft="171.2,94.4" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Barcelona Fact\HouseConfiguration Last inserted Id">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Barcelona HouseConfiguration">
     <LayoutInfo>
@@ -6387,19 +6686,103 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Barcelona Fact">
+    design-time-name="Package\Barcelona PricingRanking">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="247.2,41.6"
-          Id="Package\Barcelona Fact\HouseConfiguration Last inserted Id"
-          TopLeft="171.2,94.4" />
+          Size="157.6,41.6"
+          Id="Package\Barcelona PricingRanking\ADO NET Source"
+          TopLeft="60.8,26.4" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Barcelona PricingRanking\ADO NET Destination"
+          TopLeft="121.6,274.4" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Barcelona PricingRanking\Data Conversion"
+          TopLeft="161.6,149.6" />
+        <EdgeLayout
+          Id="Package\Barcelona PricingRanking.Paths[Data Conversion Output]"
+          TopLeft="239.2,191.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-28.4,83.2"
+              Start="0,0"
+              End="-28.4,75.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.6"
+                    Point2="0,41.6"
+                    Point3="-4,41.6" />
+                  <mssgle:LineSegment
+                    End="-24.4,41.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.4,41.6"
+                    Point2="-28.4,41.6"
+                    Point3="-28.4,45.6" />
+                  <mssgle:LineSegment
+                    End="-28.4,75.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Barcelona PricingRanking.Paths[ADO NET Source Output]"
+          TopLeft="139.6,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.6,81.6"
+              Start="0,0"
+              End="99.6,74.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.8"
+                    Point2="0,40.8"
+                    Point3="4,40.8" />
+                  <mssgle:LineSegment
+                    End="95.6,40.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.6,40.8"
+                    Point2="99.6,40.8"
+                    Point3="99.6,44.8" />
+                  <mssgle:LineSegment
+                    End="99.6,74.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Barcelona Fact\HouseConfiguration Last inserted Id">
+    design-time-name="Package\Barcelona PricingRanking\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Barcelona PricingRanking\ADO NET Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6410,7 +6793,7 @@
     design-time-name="Package\Barcelona Weather from CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Barcelona Weather from CSV\Flat File Source"
@@ -6450,7 +6833,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6458,320 +6843,6 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Barcelona Weather from CSV\ADO NET Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Barcelona Booking">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Barcelona Booking\From Hive Calendar"
-          TopLeft="89.6,39.2" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Barcelona Booking\Data Conversion"
-          TopLeft="272.8,167.2" />
-        <EdgeLayout
-          Id="Package\Barcelona Booking.Paths[ADO NET Source Output]"
-          TopLeft="175.2,80.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="175.2,86.4000000000001"
-              Start="0,0"
-              End="175.2,78.9000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.2000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.2000000000001"
-                    Point2="0,43.2000000000001"
-                    Point3="4,43.2000000000001" />
-                  <mssgle:LineSegment
-                    End="171.2,43.2000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="171.2,43.2000000000001"
-                    Point2="175.2,43.2000000000001"
-                    Point3="175.2,47.2000000000001" />
-                  <mssgle:LineSegment
-                    End="175.2,78.9000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Barcelona Booking\MemSQL Booking"
-          TopLeft="160.8,342.4" />
-        <EdgeLayout
-          Id="Package\Barcelona Booking.Paths[Data Conversion Output]"
-          TopLeft="350.4,208.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-109.2,133.6"
-              Start="0,0"
-              End="-109.2,126.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,62.8"
-                    Point2="0,66.8"
-                    Point3="-4,66.8" />
-                  <mssgle:LineSegment
-                    End="-105.2,66.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-105.2,66.8"
-                    Point2="-109.2,66.8"
-                    Point3="-109.2,70.8" />
-                  <mssgle:LineSegment
-                    End="-109.2,126.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Barcelona Booking\From Hive Calendar">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Barcelona Booking\MemSQL Booking">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Barcelona CleaningRanking">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\Barcelona CleaningRanking\ADO NET Source"
-          TopLeft="60.8,26.4" />
-        <NodeLayout
-          Size="178.4,41.6"
-          Id="Package\Barcelona CleaningRanking\ADO NET Destination"
-          TopLeft="121.6,274.4" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Barcelona CleaningRanking\Data Conversion"
-          TopLeft="200,145.6" />
-        <EdgeLayout
-          Id="Package\Barcelona CleaningRanking.Paths[ADO NET Source Output]"
-          TopLeft="139.6,68">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="138,77.6"
-              Start="0,0"
-              End="138,70.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.8"
-                    Point2="0,38.8"
-                    Point3="4,38.8" />
-                  <mssgle:LineSegment
-                    End="134,38.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="134,38.8"
-                    Point2="138,38.8"
-                    Point3="138,42.8" />
-                  <mssgle:LineSegment
-                    End="138,70.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Barcelona CleaningRanking.Paths[Data Conversion Output]"
-          TopLeft="277.6,187.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-66.8,87.2"
-              Start="0,0"
-              End="-66.8,79.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.6"
-                    Point2="0,43.6"
-                    Point3="-4,43.6" />
-                  <mssgle:LineSegment
-                    End="-62.8,43.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-62.8,43.6"
-                    Point2="-66.8,43.6"
-                    Point3="-66.8,47.6" />
-                  <mssgle:LineSegment
-                    End="-66.8,79.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Barcelona CleaningRanking\ADO NET Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Barcelona CleaningRanking\ADO NET Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Barcelona PricingRanking">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="178.4,41.6"
-          Id="Package\Barcelona PricingRanking\ADO NET Destination"
-          TopLeft="121.6,274.4" />
-        <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\Barcelona PricingRanking\ADO NET Source"
-          TopLeft="60.8,26.4" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Barcelona PricingRanking\Data Conversion"
-          TopLeft="220.8,136.8" />
-        <EdgeLayout
-          Id="Package\Barcelona PricingRanking.Paths[ADO NET Source Output]"
-          TopLeft="139.6,68">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="158.8,68.8"
-              Start="0,0"
-              End="158.8,61.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.4"
-                    Point2="0,34.4"
-                    Point3="4,34.4" />
-                  <mssgle:LineSegment
-                    End="154.8,34.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="154.8,34.4"
-                    Point2="158.8,34.4"
-                    Point3="158.8,38.4" />
-                  <mssgle:LineSegment
-                    End="158.8,61.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="71.4,39.4,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Barcelona PricingRanking.Paths[Data Conversion Output]"
-          TopLeft="298.4,178.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-87.6,96"
-              Start="0,0"
-              End="-87.6,88.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,44"
-                    Point2="0,48"
-                    Point3="-4,48" />
-                  <mssgle:LineSegment
-                    End="-83.6,48" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83.6,48"
-                    Point2="-87.6,48"
-                    Point3="-87.6,52" />
-                  <mssgle:LineSegment
-                    End="-87.6,88.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Barcelona PricingRanking\ADO NET Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Barcelona PricingRanking\ADO NET Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

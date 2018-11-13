@@ -1,0 +1,41 @@
+
+Todo bien Núnez?
+
+Mae, me sabe feo y super mal ride fallar con estas últimas progras,
+más cuando están tan cool y me faltaba tan poco para aprobar el curso.
+
+Acá en el brete nos llegó un super proyecto con una de esas empresas
+extranjeras enormes de las que todos usamos sus servicios online
+literalmente todos los días, y me toca encargarme de la arquitectura y
+lead de progra. Llevamos un tiempo breteando hardcore en el prototipo,
+ya ayer fue el kick off, la otra semana comienza gente nueva que me
+toca dirigir y así...
+
+Y bueno, lo anterior es un reto genial pero me absorvió completamente
+este final de semestre (y lo que queda del año).
+
+Quería agradecerle, lo cierto es que aprendí mucho y disfruté bastante
+todo el curso, ni hablar que fue un fogueo super tuanis para lo que
+viene, estoy más filoso diseñando bases de datos, (en una parte del
+proyecto toca que conectar headsets VR con applicaciones móviles para
+interacción en tiempo real) entonces super bien!
+
+Tuanis!
+
+
+Posdata:
+
+- De la parte del ETL, si logré connectar integrar HIVE -> SISS ->
+MemSQL, incluyendo los trucos extraños para que funcione MemSQL y
+pasar datos de un lado a otro.
+
+- Basicamente el ETL que tengo es una línea recta que lee y hace
+inserciones.
+
+- De Tableau solo logré conectarlo a MemSQL y extraer tablas.
+
+- Quedé picado con diseñar un Data Mart decente.
+
+- Es muy posible que nos veamos en algún otro curso en el futuro.
+
+- Adjunto screenshots por varas.

@@ -111,8 +111,7 @@ WITH SERDEPROPERTIES (
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH '/DEV/BigData-BI/Part2-LoadAndSummarize/data/clean_Barcelona_Catalonia_Spain_listings.csv' OVERWRITE INTO TABLE bases2.barcelona_listings;
-
+LOAD DATA LOCAL INPATH '/DEV/BigData-BI/Part2-LoadAndSummarize/data/clean_Barcelona_Catalonia_Spain_listings.1.csv' OVERWRITE INTO TABLE bases2.barcelona_listings;
 
 DROP TABLE IF EXISTS bases2.barcelona_calendar;
 
@@ -131,4 +130,4 @@ WITH SERDEPROPERTIES (
 )
 STORED AS TEXTFILE;
 
-LOAD DATA LOCAL INPATH '/DEV/BigData-BI/Part2-LoadAndSummarize/data/clean_Barcelona_Catalonia_Spain_calendar.csv' OVERWRITE INTO TABLE bases2.barcelona_calendar;
+LOAD DATA LOCAL INPATH '/DEV/BigData-BI/Part2-LoadAndSummarize/data/clean_Barcelona_Catalonia_Spain_calendar.1.csv' OVERWRITE INTO TABLE bases2.barcelona_calendar;
