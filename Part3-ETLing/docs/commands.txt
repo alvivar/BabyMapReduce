@@ -4,7 +4,7 @@ Commands
 
 To mount the physical directory:
     docker-machine ssh
-    mkdir -p /DEV
+    mkdir -p ~/DEV
     sudo mount -t vboxsf -o uid=1000,gid=50 DEV /DEV
 ^
 DEV should be a folder in the virtual machine bind to the real folder in /D/DEV
@@ -31,7 +31,7 @@ MemSQL
     docker rm -fv memsql
 
 
-docker run --name=clouderaquickstart --hostname=quickstart.cloudera --privileged=true -t -i -v /DEV:/DEV --publish-all=true -p 8888:8888 -p 80:80 -p 7180:7180 -p 50070:50070 -p 9083:9083 -p 10000:10000 cloudera/quickstart /usr/bin/docker-quickstart
+docker run --name=clouderaquickstart --hostname=quickstart.cloudera --privileged=true -t -i -v /home/docker/DEV:/DEV --publish-all=true -p 8888:8888 -p 80:80 -p 7180:7180 -p 50070:50070 -p 9083:9083 -p 10000:10000 cloudera/quickstart /usr/bin/docker-quickstart
 ^
 10000 Port exposes the Hive server 2, to be used on HIVE ODBC connections and stuff
 9083 Port exposes Hive (not needed right now)
