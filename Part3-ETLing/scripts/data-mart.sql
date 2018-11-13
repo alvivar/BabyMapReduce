@@ -2,6 +2,25 @@
 CREATE DATABASE IF NOT EXISTS `bases2`;
 
 
+CREATE TABLE IF NOT EXISTS `bases2`.`Listing_Facts` (
+  `id` INT NULL,
+  `City_id` INT NULL,
+  `HouseConfiguration_id` INT NULL,
+  INDEX `fk_Listing_City_idx` (`City_id` ASC),
+  INDEX `fk_Listing_HouseConfiguration1_idx` (`HouseConfiguration_id` ASC),
+  CONSTRAINT `fk_Listing_City`
+    FOREIGN KEY (`City_id`)
+    REFERENCES `bases2`.`City_Dimension` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Listing_HouseConfiguration1`
+    FOREIGN KEY (`HouseConfiguration_id`)
+    REFERENCES `bases2`.`HouseConfiguration_Dimension` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 DROP TABLE IF EXISTS `bases2`.`HouseConfiguration`;
 
 CREATE TABLE IF NOT EXISTS `bases2`.`HouseConfiguration` (
