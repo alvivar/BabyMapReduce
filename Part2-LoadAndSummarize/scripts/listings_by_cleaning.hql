@@ -1,10 +1,19 @@
 
 -- Barcelona
 
+drop table if exists bases2.barcelona_cleanliness;
+create table bases2.barcelona_cleanliness as
+select review_scores_cleanliness, count(id) as id_count
+from bases2.barcelona_listings
+group by review_scores_cleanliness
+order by id_count;
+
+
 select review_scores_cleanliness, count(id) as idCount
 from bases2.barcelona_listings
 group by review_scores_cleanliness
 order by idCount;
+
 
 select
     score, idCount,
@@ -22,10 +31,19 @@ from (
 
 -- Cape Town
 
+drop table if exists bases2.cape_town_cleanliness;
+create table bases2.cape_town_cleanliness as
+select review_scores_cleanliness, count(id) as id_count
+from bases2.cape_town_listings
+group by review_scores_cleanliness
+order by id_count;
+
+
 select review_scores_cleanliness, count(id) as idCount
 from bases2.cape_town_listings
 group by review_scores_cleanliness
 order by idCount;
+
 
 select
     score, idCount,
@@ -43,10 +61,19 @@ from (
 
 -- Montreal
 
+drop table if exists bases2.montreal_cleanliness;
+create table bases2.montreal_cleanliness as
+select review_scores_cleanliness, count(id) as id_count
+from bases2.montreal_listings
+group by review_scores_cleanliness
+order by id_count;
+
+
 select review_scores_cleanliness, count(id) as idCount
 from bases2.montreal_listings
 group by review_scores_cleanliness
 order by idCount;
+
 
 select
     score, idCount,

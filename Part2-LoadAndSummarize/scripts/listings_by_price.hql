@@ -1,6 +1,14 @@
 
 -- Barcelona
 
+drop table if exists bases2.barcelona_pricing;
+create table bases2.barcelona_pricing as
+select price, count(id) as id_count
+from bases2.barcelona_listings
+group by price
+order by id_count;
+
+
 select price, count(id) as idCount
 from bases2.barcelona_listings
 group by price
@@ -33,6 +41,14 @@ order by cast(price as float);
 
 -- Cape Town
 
+drop table if exists bases2.cape_town_pricing;
+create table bases2.cape_town_pricing as
+select price, count(id) as id_count
+from bases2.cape_town_listings
+group by price
+order by id_count;
+
+
 select price, count(id) as idCount
 from bases2.cape_town_listings
 group by price
@@ -49,6 +65,14 @@ from (
 
 
 -- Montreal
+
+drop table if exists bases2.montreal_pricing;
+create table bases2.montreal_pricing as
+select price, count(id) as id_count
+from bases2.montreal_listings
+group by price
+order by id_count;
+
 
 select price, count(id) as idCount
 from bases2.montreal_listings
